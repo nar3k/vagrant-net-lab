@@ -92,7 +92,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        srv.vm.network 'private_network', ip: "172.16.#{host_port_map[id]}.2", nic_type: '82540EM', virtualbox__intnet: "#{UUID}_server_#{host_port_map[id]}"
        srv.ssh.insert_key = true
        srv.vm.provision "shell",
-           inline: "sudo route add -net 172.16.0.0 netmask 255.255.0.0 gw 172.16.#{host_port_map[id]}}.1"
+           inline: "sudo route add -net 172.16.0.0 netmask 255.255.0.0 gw 172.16.#{host_port_map[id]}.1"
      end
 end
     ##############################
