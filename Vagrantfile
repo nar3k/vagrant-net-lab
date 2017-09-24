@@ -73,7 +73,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
     ##VQFX
     vqfx_devices.each do |id|
-         name = ( id ).to_sym
+         re_name = ( id ).to_sym
          config.vm.define re_name do |vsrx|
              vsrx.vm.hostname = "#{id}"
              config.vm.box = "juniper/ffp-12.1X47-D15.4"
