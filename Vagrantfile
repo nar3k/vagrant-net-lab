@@ -7,19 +7,30 @@ VAGRANTFILE_API_VERSION = "2"
 UUID = "OTYUID"
 
 ## Define ports mapping to create a Full Mesh between all 4 vqfx
-ports_map = { 'leaf01' => [1,2,3,4,27],
-              'leaf02' => [5,6,7,8,9,10],
+ports_map = { 'leaf01' => [1,2,3,4,13],
+              'leaf02' => [5,6,7,8,9,10,14],
               'spine01' => [1,2,5,6],
               'spine02' => [3,4,7,8],
-              'exit01' => [9,10],
+              'exit01' => [9,10,11,15],
+              'r01'=>[11,12,16],
                }
-junos_devices = ['leaf01','leaf02','spine01','spine02','exit01']
+host_port_map = { 'dc-host01' => 13,
+                   'dc-host02' => 14,
+                   'dmz-host01' => 15,
+                   'ext-host01' => 16,
+
+}
+vqfx_devices = ['leaf01','leaf02','spine01','spine02','exit01']
+vrx_devices = ['r01']
+host_devices = ['dc-host01','dc-host02', 'dmz-host01','ext-host01']
+
+
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.ssh.insert_key = false
 
-    junos_devices.each do |id|
+    vqfx_devices.each do |id|
         re_name  = ( id ).to_sym
         pfe_name = ( id + "-pfe" ).to_sym
 
@@ -60,7 +71,30 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             end
         end
     end
+    ##VQFX
+    vqfx_devices.each do |id|
+         name = ( id ).to_sym
+         config.vm.define re_name do |vsrx|
+             vsrx.vm.hostname = "#{id}"
+             config.vm.box = "juniper/ffp-12.1X47-D15.4"
+             ports_map[id].each do |seg_id|
+                vqfx.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "#{UUID}_seg#{[seg_id]}"
+            end
+        end
+    end
 
+    host_devices.each do |id|
+    ##SERVERS
+    srv_name = ( id ).to_sym
+     config.vm.define srv_name do |srv|
+       srv.vm.box = "robwc/minitrusty64"
+       srv.vm.hostname = "#{id}"
+       srv.vm.network 'private_network', ip: "172.16.#{id}.2", nic_type: '82540EM', virtualbox__intnet: "#{UUID}_server_#{host_port_map[id]}"
+       srv.ssh.insert_key = true
+       srv.vm.provision "shell",
+           inline: "sudo route add -net 172.16.0.0 netmask 255.255.0.0 gw 172.16.#{id}.1"
+     end
+end
     ##############################
     ## Box provisioning        ###
     ## exclude Windows host    ###
@@ -68,9 +102,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     if !Vagrant::Util::Platform.windows?
         config.vm.provision "ansible" do |ansible|
             ansible.groups = {
-                "vqfx10k" => ["vqfx1", "vqfx2" ],
-                "vqfx10k-pfe"  => ["vqfx1-pfe", "vqfx2-pfe"],
-                "all:children" => ["vqfx10k", "vqfx10k-pfe"]
+                "vqfx10k-pfe"  => ["leaf01-pfe", "leaf01-pfe","spine01-pfe","spine02-pfe","exit01-pfe"],
+                "hosts" => ['dc-host01','dc-host02', 'dmz-host01','ext-host01'],
+                "leaf" => ["leaf01","leaf02"],
+                "spine" => ["spine01","spine02"],
+                "edge" => ["exit01","r01"],
+                "all:children" => ["leaf", "spine","vqfx10k-pfe","hosts","spine"]
             }
             ansible.playbook = "pb.conf.all.commit.yaml"
         end
