@@ -76,7 +76,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
          re_name = ( id ).to_sym
          config.vm.define re_name do |vsrx|
              vsrx.vm.hostname = "#{id}"
-             config.vm.box = "juniper/ffp-12.1X47-D15.4"
+             vsrx.vm.box = "juniper/ffp-12.1X47-D15.4"
              ports_map[id].each do |seg_id|
                 vsrx.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "#{UUID}_seg#{[seg_id]}"
             end
