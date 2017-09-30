@@ -2,29 +2,15 @@
 This Vagrantfile will spawn 4 instances of VQFX (Full) each with 1 Routing Engine and 1 PFE VM  
 All VQFX will be interconnected in a full-mesh
 
-> __This topology is a work in progress__
+U used vqfx to deploy all the stuff. Ansible workbooks are work in progress.
 
-# Requirement
+I made connections using port-map dictionary which i used in Vagrantfile.
+I'm not sure whether it scales for a bit topology , but it works just fine and very easy to use
 
-### Resources
- - RAM : 10G
- - CPU : 5 Cores
 
-### Tools
+Below is actual scheme
+{::nomarkdown}
 
-# Topology
+<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://www.lucidchart.com/documents/embeddedchart/6c737f69-c0f3-4902-b23a-f6a19e709c32" id="yd~A596e2B5Z"></iframe></div>
 
-All devices are connected in Full-mesh with the following mapping 
-
-```
-vqfx1 xe-0/0/0   <>  vqfx4 xe-0/0/0	
-vqfx1 xe-0/0/1   <>  vqfx3 xe-0/0/0
-vqfx1 xe-0/0/2   <>  vqfx2 xe-0/0/0
-vqfx2 xe-0/0/1   <>  vqfx4 xe-0/0/1
-vqfx2 xe-0/0/2   <>  vqfx3 xe-0/0/1
-vqfx3 xe-0/0/2   <>  vqfx4 xe-0/0/2
-```
-
-# Provisioning / Configuration
-
-Not available yet
+{:/}
