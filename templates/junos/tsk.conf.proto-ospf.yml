@@ -9,8 +9,8 @@
               interface lo0.0 {
                   passive;
               }
-              {% if fabric_ports is defined %}
-              {% for port in fabric_ports %}
+              {% if ports.fabric_ports is defined %}
+              {% for port in ports.fabric_ports %}
               interface {{port}}.0 {
                   interface-type p2p;
               }
