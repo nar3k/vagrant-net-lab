@@ -11,7 +11,7 @@
            {% if non_grouped_vlan  in vlans['layer3'] %}
            {% for vlan_name,conn_id in vlans['layer3'][non_grouped_vlan].iteritems() %}
          unit {{ etc_vlans_db[non_grouped_vlan][vlan_name]  }} {
-           description {{ vlan_name }}
+           description {{ vlan_name }};
            family inet {
            {% if non_grouped_vlan in ['interconnects'] %}
            address {{ network_db[non_grouped_vlan][vlan_name] | ipaddr(conn_id) }};
@@ -30,7 +30,7 @@
            {% for vlan_group in vlans['layer3'][grouped_vlan] %}
            {% for vlan_name,vlan_id in grouped_vlans_db[grouped_vlan][vlan_group].iteritems() %}
          unit {{ vlan_id }} {
-           description {{ vlan_name }}
+           description {{ vlan_name }};
            family inet {
              {% if grouped_vlan in ['underlays'] %}
              address {{ network_db[grouped_vlan][vlan_name]}}.{{underlay_ip}}/27;
