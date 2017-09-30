@@ -13,7 +13,7 @@
            {{ vlan_name }} {
               vlan-id {{ etc_vlans_db[non_grouped_vlan][vlan_name] }};
         {% if layer in  ['layer3'] %}
-              l3-interface {{ vlanif_interface }} .{{ etc_vlans_db[non_grouped_vlan][vlan_name] }};
+              l3-interface {{ vlanif_interface }}.{{ etc_vlans_db[non_grouped_vlan][vlan_name] }};
         {% endif%}
           }
         {% endfor %}
