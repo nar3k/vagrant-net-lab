@@ -14,7 +14,7 @@
 
       }
       routing-options {
-          router-id 1.1.1.{{ id }}
+          router-id {{network_db['ospf-loopback01']}}.{{ id }}
           forwarding-table {
 
               export  load-balancing-policy;
