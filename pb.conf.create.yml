@@ -16,6 +16,7 @@
       set_fact:
        current_block: interfaces
     - include: ./templates/{{ os }}/tsk.conf.br-open.yml
+    - include: ./templates/{{ os }}/tsk.conf.if-etc.yml
     - include: ./templates/{{ os }}/tsk.conf.if-vlanif.yml
     - include: ./templates/{{ os }}/tsk.conf.if-lo0.yml
     - include: ./templates/{{ os }}/tsk.conf.if-fabric.yml

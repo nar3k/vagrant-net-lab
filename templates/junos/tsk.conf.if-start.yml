@@ -1,6 +1,0 @@
-- name: start interfaces
-  blockinfile:
-    path: ./config/{{inventory_hostname}}.conf
-    marker: ""
-    block: |
-      interfaces {
