@@ -1,0 +1,9 @@
+- name: fabric_interfaces
+  blockinfile:
+    path: ./config/{{inventory_hostname}}.config
+    marker: ""
+    block: |
+      lldp {
+          interface all;
+      }
+      

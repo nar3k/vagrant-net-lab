@@ -1,0 +1,31 @@
+- name: Get create config
+  hosts: fabric
+  connection: local
+  gather_facts: no
+  vars_files:
+   - ./all_manual/mgmt_vrf.yaml
+   - ./all_manual/vlans.yaml
+  tasks:
+    - name: 'delete files null files'
+      file: path=./config/{{inventory_hostname}}.config state=absent
+    - name: hey
+      debug: "{{ os }}"
+    - include: "./templates/{{ os }}/tsk.conf.services.yml"
+    - include: ./templates/{{ os }}/tsk.conf.vlan.yml
+    - name: going to interfaces
+      set_fact:
+       current_block: interfaces
+    - include: ./templates/{{ os }}/tsk.conf.br-open.yml
+    - include: ./templates/{{ os }}/tsk.conf.if-vlanif.yml
+    - include: ./templates/{{ os }}/tsk.conf.if-lo0.yml
+    - include: ./templates/{{ os }}/tsk.conf.if-fabric.yml
+    - include: ./templates/{{ os }}/tsk.conf.if-switchports.yml
+    - include: ./templates/{{ os }}/tsk.conf.br-close.yml
+    - name: going to protocols
+      set_fact:
+       current_block: protocols
+    - include: ./templates/{{ os }}/tsk.conf.br-open.yml
+    - include: ./templates/{{ os }}/tsk.conf.proto-lldp.yml
+    - include: ./templates/{{ os }}/tsk.conf.proto-ospf.yml
+    - include: ./templates/{{ os }}/tsk.conf.br-close.yml
+    - include: ./templates/{{ os }}/tsk.conf.routing-etc.yml

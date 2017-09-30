@@ -1,0 +1,22 @@
+
+
+- name: closing {{ current_block }}
+  blockinfile:
+    path: ./config/{{inventory_hostname}}.config
+    marker: ""
+    block: |
+      policy-options {
+          policy-statement load-balancing-policy {
+              then {
+                  load-balance per-packet;
+              }
+          }
+
+      }
+      routing-options {
+          router-id 1.1.1.{{ id }}
+          forwarding-table {
+
+              export  load-balancing-policy;
+          }
+      }

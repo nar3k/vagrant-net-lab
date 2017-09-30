@@ -1,0 +1,20 @@
+- name: fabric_interfaces
+  blockinfile:
+    path: ./config/{{inventory_hostname}}.config
+    marker: ""
+    block: |
+      ospf {
+          area {{ ospf_area }} {
+
+              interface lo0.0 {
+                  passive;
+              }
+              {% if fabric_ports is defined %}
+              {% for port in fabric_ports %}
+              interface {{port}}.0 {
+                  interface-type p2p;
+              }
+              {% endfor %}
+              {% endif %}
+          }
+      }

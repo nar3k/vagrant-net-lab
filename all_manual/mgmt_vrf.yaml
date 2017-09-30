@@ -1,0 +1,18 @@
+network_db:
+  underlays:
+    un-mgmt-esxi: 172.16.8
+    un-mgmt-vmotion: 172.16.20
+    un-mgmt-vsan: 172.16.107
+  vteps:
+    vtep-mgmt01: 172.16.80
+    vtep-comp01: 172.16.84
+  storages:
+    stor-nfs01: 172.16.13.0/24
+    stor-nfs02: 172.16.14.0/24
+  services:
+    svc-web-dmz: 172.16.100.0/24
+  interconnects:
+     i-leaf-exit: 10.100.255.0/30
+     i-exit-r: 10.100.255.4/30
+  ospf-loopback01: 10.100.228
+  ospf-loopback02: 10.100.229

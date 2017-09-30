@@ -1,0 +1,21 @@
+vlans:
+  layer3:
+    storages:
+      stor-nfs01: 1
+interfaces:
+    - name: xe-0/0/0
+      ip: 10.10.0.1
+    - name: xe-0/0/1
+      ip: 10.10.1.1
+    - name: em5
+      ip: 10.10.5.1
+id: 3
+ports:
+  fabric_ports:
+    - xe-0/0/0
+    - xe-0/0/2
+    - xe-0/0/1
+    - xe-0/0/3
+  single_ports:
+    access_ports:
+      - { name: xe-0/0/4, group: storages, vlan: stor-nfs01 }

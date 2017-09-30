@@ -1,0 +1,8 @@
+
+
+- name: opening {{ current_block }}
+  blockinfile:
+    path: ./config/{{inventory_hostname}}.config
+    marker: ""
+    block: |
+      {{ current_block }} {

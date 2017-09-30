@@ -1,0 +1,22 @@
+
+
+- name: fabric_interfaces
+  blockinfile:
+    path: ./config/{{inventory_hostname}}.config
+    marker: ""
+    block: |
+      {% if ports.single_ports is defined %}
+       {% for port in ports.single_ports.access_ports %}
+         {{ port.name }} {
+
+               unit 0 {
+           family ethernet-switching {
+            {{ switchport_pattern }} access;
+            vlan {
+              members {{ etc_vlans_db[port.group][port.vlan] }};
+            }
+           }
+         }
+       }
+       {% endfor %}
+      {% endif %}
