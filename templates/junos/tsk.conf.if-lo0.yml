@@ -5,7 +5,6 @@
     path: ./config/{{inventory_hostname}}.conf
     marker: ""
     block: |
-      {% if ospf_loopbacks is defined %}
        lo0 {
          unit 0 {
            family inet {
@@ -15,4 +14,3 @@
            }
          }
        }
-       {% endif %}
