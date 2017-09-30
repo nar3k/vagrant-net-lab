@@ -8,7 +8,6 @@
        lo0 {
          unit 0 {
            family inet {
-             description ospf-loopback
              address {{ network_db['ospf-loopback01']}}.{{ id }}/32;
              address {{ network_db['ospf-loopback02']}}.{{ id }}/32 secondary;
            }
