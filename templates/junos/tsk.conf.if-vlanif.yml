@@ -2,7 +2,7 @@
 
 - name: vlanif interfaces
   blockinfile:
-    path: ./config/{{inventory_hostname}}.config
+    path: ./config/{{inventory_hostname}}.conf
     marker: ""
     block: |
          {% if vlans is defined %}

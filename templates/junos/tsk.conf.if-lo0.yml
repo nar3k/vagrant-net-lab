@@ -2,7 +2,7 @@
 
 - name: loopback_interfaces
   blockinfile:
-    path: ./config/{{inventory_hostname}}.config
+    path: ./config/{{inventory_hostname}}.conf
     marker: ""
     block: |
       {% if ospf_loopbacks is defined %}

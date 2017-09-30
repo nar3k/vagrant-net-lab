@@ -7,10 +7,10 @@
    - ./all_manual/vlans.yaml
   tasks:
     - name: 'delete files null files'
-      file: path=./config/{{inventory_hostname}}.config state=absent
+      file: path=./config/{{inventory_hostname}}.conf state=absent
     - name: hey
       debug: "{{ os }}"
-    - include: "./templates/{{ os }}/tsk.conf.services.yml"
+    - include: "./templates/{{ os }}/tsk.conf.start.yml"
     - include: ./templates/{{ os }}/tsk.conf.vlan.yml
     - name: going to interfaces
       set_fact:

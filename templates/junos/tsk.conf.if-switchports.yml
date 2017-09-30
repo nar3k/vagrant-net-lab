@@ -2,7 +2,7 @@
 
 - name: fabric_interfaces
   blockinfile:
-    path: ./config/{{inventory_hostname}}.config
+    path: ./config/{{inventory_hostname}}.conf
     marker: ""
     block: |
       {% if ports.single_ports is defined %}
