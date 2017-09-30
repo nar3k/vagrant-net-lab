@@ -106,7 +106,7 @@ end
                 "hosts" => ['dc-host01','dc-host02', 'dmz-host01','ext-host01'],
                 "leaf" => ["leaf01","leaf02"],
                 "spine" => ["spine01","spine02"],
-                "fabric: children" => ["leaf","spine"]
+                "fabric:children" => ["leaf","spine"],
                 "edge" => ["exit01","r01"],
                 "all:children" => ["leaf", "spine","vqfx10k-pfe","hosts","spine"]
             }

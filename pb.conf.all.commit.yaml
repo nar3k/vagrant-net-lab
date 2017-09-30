@@ -12,7 +12,6 @@
         port: "{{ ansible_ssh_port }}"
         user: root
         passwd: Juniper
-        file: "/config/{{ inventory_hostname }}.config"
+        file: "./config/{{ inventory_hostname }}.config"
         overwrite: yes
         replace: no
-        logfile: /tmp/changes.log
