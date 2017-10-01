@@ -8,15 +8,15 @@
     - name: get facts from device
       napalm_get_facts:                   # NAPALM plugin
         hostname: "{{ ansible_ssh_host }}"            # start of connection parameters
-        username: "{{ ansible_ssh_user }}"
-        password: "{{ password }}"
+        username: "root"
+        password: "Juniper"
         dev_os: "{{ os }}"
         optional_args:
           port: "{{ ansible_ssh_port }}"             # end of connection parameters
-        filter: ['facts']                # which NAPALM getters to use
+        filter: ['lldp_neighbors']                # which NAPALM getters to use
       register: napalm_facts             # store information here
       tags: [print_action]
     - name: Print gathered facts
       debug:
-        msg: "{{ napalm_facts.ansible_facts|to_nice_json }}"
+        msg: "{{ napalm_facts.ansible_facts | to_nice_json }}"
       tags: [print_action]

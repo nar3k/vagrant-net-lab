@@ -1,6 +1,6 @@
 # This task gets all Junos configuration from all devices
 - name: Get configuration
-  hosts: vqfx10k
+  hosts: leaf01
   connection: local
   gather_facts: no
   roles:
@@ -14,4 +14,4 @@
         passwd: Juniper
         dest: "{{ inventory_hostname }}.conf"
         logfile: /tmp/changes.log
-     tags: [print_action]
+      tags: [print_action]
