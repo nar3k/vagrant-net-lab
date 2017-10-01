@@ -4,7 +4,7 @@ port_db: #should be generated from some external source
       link_uid: 1
       neighbor_device: spine01
       neighbor_logical_n: 1
-      neighbor_port: xe-0/0/5
+      neighbor_port: xe-0/0/5 #intentional mistake
       port_name: xe-0/0/0
       self_logical_n: 1
     - link_type: interswitch
@@ -38,7 +38,7 @@ port_db: #should be generated from some external source
       self_logical_n: 1
     - link_type: interswitch
       link_uid: 6
-      neighbor_device: spine04
+      neighbor_device: spine04 #intential mistake
       neighbor_logical_n: 1
       neighbor_port: xe-0/0/3
       port_name: xe-0/0/1
