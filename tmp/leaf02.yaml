@@ -3,7 +3,7 @@
         - hostname: spine01
           port: xe-0/0/2
     xe-0/0/1:
-        - hostname: spine01
+        - hostname: spine04
           port: xe-0/0/3
     xe-0/0/2:
         - hostname: spine02
