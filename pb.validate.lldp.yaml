@@ -28,12 +28,12 @@
       msg: "{{ validation.compliance_report|to_nice_json }}"
     when: not validation.compliance_report.complies
     tags: [print_action]
-
+  - name: "prepare report file"
     file: path=./reports/lldp.report state=absent
-    file: path=./reports/lldp.report state=touch
   - name: "Failed Compliance Report save"
     blockinfile:
       path: ./reports/lldp.report
+      create: yes
       marker: "###{{ inventory_hostname }} FAILED CONNECTIONS###"
       block: |
         {% for name,state in validation.compliance_report.get_lldp_neighbors.present.items() %}
