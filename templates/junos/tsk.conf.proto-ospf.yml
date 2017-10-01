@@ -21,7 +21,7 @@
         {% for non_grouped_vlan in ['interconnects','storages','vteps']%}
         {% if non_grouped_vlan  in vlans['layer3'] %}
         {% for vlan_name,conn_id in vlans['layer3'][non_grouped_vlan].iteritems() %}
-             {{ vlanif_interface }}.{{ etc_vlans_db[non_grouped_vlan][vlan_name] }} {
+             interface {{ vlanif_interface }}.{{ etc_vlans_db[non_grouped_vlan][vlan_name] }} {
         {% if non_grouped_vlan in ['interconnects'] %}
             interface-type p2p;
         {% else %}
@@ -35,7 +35,7 @@
         {% if grouped_vlan in vlans['layer3'] %}
         {% for vlan_group in vlans['layer3'][grouped_vlan] %}
         {% for vlan_name,vlan_id in grouped_vlans_db[grouped_vlan][vlan_group].iteritems() %}
-            {{ vlanif_interface }}.{{ vlan_id }} {
+            interface {{ vlanif_interface }}.{{ vlan_id }} {
               passive;
             }
         {% endfor %}
@@ -47,4 +47,3 @@
         {% endif %}
 
           }
-      
