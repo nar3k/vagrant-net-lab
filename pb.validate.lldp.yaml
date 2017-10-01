@@ -3,6 +3,7 @@
   hosts: fabric
   connection: local
   gather_facts: no
+  serial: 1
   vars_files:
    - ./all_manual/ports.yaml
   tasks:
