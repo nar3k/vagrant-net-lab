@@ -14,3 +14,4 @@
         passwd: Juniper
         dest: "{{ inventory_hostname }}.conf"
         logfile: /tmp/changes.log
+     tags: [print_action]

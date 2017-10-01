@@ -9,12 +9,42 @@
               interface lo0.0 {
                   passive;
               }
-              {% if ports.fabric_ports is defined %}
-              {% for port in ports.fabric_ports %}
+        {% if ports.fabric_ports is defined %}
+        {% for port in ports.fabric_ports %}
               interface {{port}}.0 {
                   interface-type p2p;
               }
-              {% endfor %}
-              {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% if vlans is defined %}
+
+        {% for non_grouped_vlan in ['interconnects','storages','vteps']%}
+        {% if non_grouped_vlan  in vlans['layer3'] %}
+        {% for vlan_name,conn_id in vlans['layer3'][non_grouped_vlan].iteritems() %}
+             {{ vlanif_interface }}.{{ etc_vlans_db[non_grouped_vlan][vlan_name] }} {
+        {% if non_grouped_vlan in ['interconnects'] %}
+            interface-type p2p;
+        {% else %}
+                 passive;
+        {% endif %}
+               }
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        {% for grouped_vlan in ['services','underlays'] %}
+        {% if grouped_vlan in vlans['layer3'] %}
+        {% for vlan_group in vlans['layer3'][grouped_vlan] %}
+        {% for vlan_name,vlan_id in grouped_vlans_db[grouped_vlan][vlan_group].iteritems() %}
+            {{ vlanif_interface }}.{{ vlan_id }} {
+              passive;
+            }
+        {% endfor %}
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+
+              }
+        {% endif %}
+
           }
-      }
+      
