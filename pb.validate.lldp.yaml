@@ -6,6 +6,8 @@
   vars_files:
    - ./all_manual/ports.yaml
   tasks:
+  - name: "prepate tmp"
+    file: path=./tmp state=directory
   - name: "Generate validation rules"
     template:
       src: "./templates/validate/lldp.j2"
@@ -28,7 +30,6 @@
       msg: "{{ validation.compliance_report|to_nice_json }}"
     when: not validation.compliance_report.complies
     tags: [print_action]
-
   - name: "Failed Compliance Report prepare"
     file: path=./reports/tmp state=directory
   - name: "Failed Compliance Report prepare"
@@ -51,8 +52,10 @@
     assemble:
       src: ./reports/tmp/
       dest: ./reports/lldp.report
-  - name: "Failed Compliance Report prepare"
+  - name: "delete files"
     file: path=./reports/tmp/{{ inventory_hostname }}.report state=absent
+  - name: 'delete files'
+    file: path=./tmp/{{ inventory_hostname }}.yaml state=absent
   - name: "Failed Compliance Report"
     fail:
       msg: "{{ validation.compliance_report|to_nice_json }}"
@@ -62,5 +65,3 @@
       msg: "Complies"
     when: validation.compliance_report.complies
     tags: [print_action]
-  - name: 'delete files'
-    file: path=./tmp/{{ inventory_hostname }}.yaml state=absent
