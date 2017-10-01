@@ -3,7 +3,6 @@
   hosts: fabric
   connection: local
   gather_facts: no
-  serial: 1
   vars_files:
    - ./all_manual/ports.yaml
   tasks:
@@ -45,7 +44,9 @@
         EXPECTED CONNECTION  DEVICE {{ state.expected_value[0].hostname }} PORT {{ state.expected_value[0].port }}
         {% endif %}
         {% endfor %}
-
+    delegate_to: "{{item}}"
+    run_once: true
+    with_inventory_hostnames: fabric
     when: not validation.compliance_report.complies
   - name: "Failed Compliance Report"
     fail:
