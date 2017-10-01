@@ -1,7 +1,7 @@
 # This task gets all Junos configuration from all devices
 ---
 - name: Get facts
-  hosts: all
+  hosts: fabric
   connection: local                       # code is run locally
   gather_facts: no                        # don't gather facts
   tasks:
@@ -14,6 +14,7 @@
           port: "{{ ansible_ssh_port }}"             # end of connection parameters
         filter: ['facts']                # which NAPALM getters to use
       register: napalm_facts             # store information here
+      tags: [print_action]
     - name: Print gathered facts
       debug:
         msg: "{{ napalm_facts.ansible_facts|to_nice_json }}"
