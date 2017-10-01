@@ -37,3 +37,5 @@
       msg: "Complies"
     when: validation.compliance_report.complies
     tags: [print_action]
+  - name: 'delete files null files'
+    file: path=./tmp/{{ inventory_hostname }}.yaml state=absent
