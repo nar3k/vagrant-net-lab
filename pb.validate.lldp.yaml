@@ -30,7 +30,7 @@
     tags: [print_action]
 
   - name: "Failed Compliance Report prepare"
-    file: path=./reports/tmp state=dir
+    file: path=./reports/tmp state=directory
   - name: "Failed Compliance Report prepare"
     file: path=./reports/lldp.report state=absent
   - name: "Failed Compliance Report save"
