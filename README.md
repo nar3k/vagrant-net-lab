@@ -1,11 +1,13 @@
 
-This Vagrantfile will spawn 4 instances of VQFX (Full) each with 1 Routing Engine and 1 PFE VM  
-All VQFX will be interconnected in a full-mesh
-
 U used vqfx to deploy all the stuff. Ansible workbooks are work in progress.
 
 I made connections using port-map dictionary which i used in Vagrantfile.
 I'm not sure whether it scales for a bit topology , but it works just fine and very easy to use
+
+Please be aware that I use config file that works with my dockered ansible - particularly links to libraries.
+
+https://hub.docker.com/r/nar3k/ansible/
+
 
 
 Below is actual scheme
