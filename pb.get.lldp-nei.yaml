@@ -9,6 +9,7 @@
       napalm_get_facts:                   # NAPALM plugin
         hostname: "{{ ansible_ssh_host }}"            # start of connection parameters
         username: "{{ ansible_ssh_user }}"
+        password: "{{ password }}"
         dev_os: "{{ os }}"
         optional_args:
           port: "{{ ansible_ssh_port }}"             # end of connection parameters

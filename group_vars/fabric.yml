@@ -2,3 +2,4 @@ os: junos
 ospf_area: 0
 vlanif_interface: irb
 switchport_pattern: interface-mode
+password: ""
