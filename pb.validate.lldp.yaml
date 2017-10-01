@@ -13,6 +13,7 @@
     changed_when: no
     check_mode: no
   - name: "Read validation rules, gather data and verify it against rules"
+    ignore_errors: yes
     napalm_validate:
       hostname: "{{ ansible_ssh_host }}"
       username: "root"
