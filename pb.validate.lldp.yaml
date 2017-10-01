@@ -40,8 +40,8 @@
         {% for name,state in validation.compliance_report.get_lldp_neighbors.present.items() %}
         {% if not state.complies %}
         PORT {{ name }}
-        ACTUAL   CONNECTION  DEVICE {{ state.actual_value.hostname }}   PORT {{ state.actual_value.port }}
-        EXPECTED CONNECTION  DEVICE {{ state.expected_value.hostname }} PORT {{ state.expected_value.port }}
+        ACTUAL   CONNECTION  DEVICE {{ state.actual_value[0].hostname }}   PORT {{ state.actual_value[0].port }}
+        EXPECTED CONNECTION  DEVICE {{ state.expected_value[0].hostname }} PORT {{ state.expected_value[0].port }}
         {% endif %}
         {% endfor %}
 
