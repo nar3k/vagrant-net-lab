@@ -1,0 +1,33 @@
+---
+- name: Validate
+  hosts: fabric
+  connection: local
+  gather_facts: no
+  vars_files:
+   - ./all_manual/ports.yaml
+  tasks:
+  - name: "Generate validation rules"
+    template:
+      src: "./templates/validate/lldp.j2"
+      dest: "./tmp/{{ inventory_hostname }}.yaml"
+    changed_when: no
+    check_mode: no
+  - name: "Read validation rules, gather data and verify it against rules"
+    napalm_validate:
+      hostname: "{{ ansible_ssh_host }}"
+      username: "root"
+      dev_os: "{{ os }}"
+      password: "Juniper"
+      optional_args:
+        port: "{{ ansible_ssh_port }}"
+      validation_file: "./tmp/{{ inventory_hostname }}.yaml"
+    register: validation
+  - name: "Failed Compliance Report"
+    fail:
+      msg: "{{ validation.compliance_report|to_nice_json }}"
+    when: not validation.compliance_report.complies
+  - name: "Compliance report"
+    debug:
+      msg: "Complies"
+    when: validation.compliance_report.complies
+    tags: [print_action]

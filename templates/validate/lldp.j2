@@ -1,0 +1,6 @@
+- get_lldp_neighbors:
+{% for port in port_db[inventory_hostname] %}
+    {{ port.port_name }}:
+        hostname: {{ port.neighbor_device }}
+        port: {{ port.neighbor_port }}
+{% endfor %}

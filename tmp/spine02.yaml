@@ -1,0 +1,13 @@
+- get_lldp_neighbors:
+    xe-0/0/0:
+        hostname: leaf01
+        port: xe-0/0/2
+    xe-0/0/1:
+        hostname: leaf01
+        port: xe-0/0/3
+    xe-0/0/2:
+        hostname: leaf02
+        port: xe-0/0/2
+    xe-0/0/3:
+        hostname: leaf02
+        port: xe-0/0/3
