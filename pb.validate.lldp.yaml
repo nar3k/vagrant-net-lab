@@ -2,7 +2,6 @@
 - name: Validate
   hosts: fabric
   connection: local
-  serial: 1
   gather_facts: no
   vars_files:
    - ./all_manual/ports.yaml
@@ -31,10 +30,12 @@
     tags: [print_action]
 
   - name: "Failed Compliance Report prepare"
+    file: path=./reports/tmp state=dir
+  - name: "Failed Compliance Report prepare"
     file: path=./reports/lldp.report state=absent
   - name: "Failed Compliance Report save"
     blockinfile:
-      path: ./reports/lldp.report
+      path: ./reports/tmp/{{ inventory_hostname }}.report
       marker: "###{{ inventory_hostname }} FAILED CONNECTIONS###"
       create: yes
       block: |
@@ -45,8 +46,13 @@
         EXPECTED CONNECTION  DEVICE {{ state.expected_value[0].hostname }} PORT {{ state.expected_value[0].port }}
         {% endif %}
         {% endfor %}
-
     when: not validation.compliance_report.complies
+  - name: "Failed Compliance Report save"
+    assemble:
+      src: ./reports/tmp/
+      dest: ./reports/lldp.report
+  - name: "Failed Compliance Report prepare"
+    file: path=./reports/tmp/{{ inventory_hostname }}.report state=absent
   - name: "Failed Compliance Report"
     fail:
       msg: "{{ validation.compliance_report|to_nice_json }}"
