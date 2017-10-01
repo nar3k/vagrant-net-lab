@@ -32,10 +32,27 @@
     fail:
       msg: "{{ validation.compliance_report|to_nice_json }}"
     when: not validation.compliance_report.complies
+  - name: "Failed Compliance Report prepare"
+    file: path=./reports/lldp.report state=absent
+  - name: "Failed Compliance Report save"
+    blockinfile:
+      path: ./reports/lldp.report
+      marker: "{{ inventory_hostname }} FAILED CONNECTIONS"
+      create: yes
+      block: |
+        {% for name,state in validation.compliance_report.get_lldp_neighbors.present.items() % }
+        {% if not state.complies %}
+        PORT {{ name }}
+        ACTUAL   CONNECTION  DEVICE {{ state.actual_value.hostname }}   PORT {{ state.actual_value.port }}
+        EXPECTED CONNECTION  DEVICE {{ state.expected_value.hostname }} PORT {{ state.expected_value.port }}
+        {% endif %}
+        {% endfor %}
+
+    when: not validation.compliance_report.complies
   - name: "Compliance report"
     debug:
       msg: "Complies"
     when: validation.compliance_report.complies
     tags: [print_action]
-  - name: 'delete files null files'
+  - name: 'delete files'
     file: path=./tmp/{{ inventory_hostname }}.yaml state=absent
