@@ -28,10 +28,7 @@
       msg: "{{ validation.compliance_report|to_nice_json }}"
     when: not validation.compliance_report.complies
     tags: [print_action]
-  - name: "Failed Compliance Report"
-    fail:
-      msg: "{{ validation.compliance_report|to_nice_json }}"
-    when: not validation.compliance_report.complies
+
   - name: "Failed Compliance Report prepare"
     file: path=./reports/lldp.report state=absent
   - name: "Failed Compliance Report save"
@@ -48,6 +45,10 @@
         {% endif %}
         {% endfor %}
 
+    when: not validation.compliance_report.complies
+  - name: "Failed Compliance Report"
+    fail:
+      msg: "{{ validation.compliance_report|to_nice_json }}"
     when: not validation.compliance_report.complies
   - name: "Compliance report"
     debug:
