@@ -37,7 +37,7 @@
       marker: "{{ inventory_hostname }} FAILED CONNECTIONS"
       create: yes
       block: |
-        {% for name,state in validation.compliance_report.get_lldp_neighbors.present.items() % }
+        {% for name,state in validation.compliance_report.get_lldp_neighbors.present.items() %}
         {% if not state.complies %}
         PORT {{ name }}
         ACTUAL   CONNECTION  DEVICE {{ state.actual_value.hostname }}   PORT {{ state.actual_value.port }}
