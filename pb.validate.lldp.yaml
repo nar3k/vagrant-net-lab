@@ -34,7 +34,7 @@
   - name: "Failed Compliance Report save"
     blockinfile:
       path: ./reports/lldp.report
-      marker: "{{ inventory_hostname }} FAILED CONNECTIONS"
+      marker: "###{{ inventory_hostname }} FAILED CONNECTIONS###"
       create: yes
       block: |
         {% for name,state in validation.compliance_report.get_lldp_neighbors.present.items() %}
