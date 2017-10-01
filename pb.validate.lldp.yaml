@@ -30,13 +30,12 @@
     when: not validation.compliance_report.complies
     tags: [print_action]
 
-  - name: "Failed Compliance Report prepare"
     file: path=./reports/lldp.report state=absent
+    file: path=./reports/lldp.report state=touch
   - name: "Failed Compliance Report save"
     blockinfile:
       path: ./reports/lldp.report
       marker: "###{{ inventory_hostname }} FAILED CONNECTIONS###"
-      create: yes
       block: |
         {% for name,state in validation.compliance_report.get_lldp_neighbors.present.items() %}
         {% if not state.complies %}
