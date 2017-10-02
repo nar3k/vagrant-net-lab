@@ -9,7 +9,9 @@
        {% for port_group in ports.access_ports %}
        {% for port in port_group.ports %}
          {{ port }} {
-
+           {% if 'ae' in port %}
+           aggregated-ether-options lacp active;
+           {% endif %}
                unit 0 {
            family ethernet-switching {
             {{ switchport_pattern }} access;
@@ -27,6 +29,9 @@
         {% for port_group in ports.trunk_ports %}
         {% for port in port_group.ports %}
           {{ port }} {
+        {% if 'ae' in port %}
+        aggregated-ether-options lacp active;
+        {% endif %}
                 unit 0 {
             family ethernet-switching {
              {{ switchport_pattern }} trunk;

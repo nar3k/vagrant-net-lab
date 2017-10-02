@@ -10,7 +10,6 @@
       {% for slave in port_slaves %}
       {{ slave }} {
         ether-options 802.3ad {{ port_master }};
-        aggregated-ether-options lacp active;
       }
       {% endfor %}
       {% endfor %}
