@@ -27,6 +27,6 @@ ports:
       ports:
        - xe-0/0/4
   trunk_ports:
-   - vlans: [leaf-exit01]
+   - vlans: [i-leaf-exit01]
      ports:
       - ae01
