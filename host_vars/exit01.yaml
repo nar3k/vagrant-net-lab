@@ -8,7 +8,7 @@ vlans:
     type: service
     vlan_list:
       - dmz-web01
-loopback_id: 3
+loopback_id: 5
 ports:
   aggregated_ports:
     ae01: ['xe-0/0/0','xe-0/0/1']
