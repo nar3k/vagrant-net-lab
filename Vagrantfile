@@ -109,7 +109,7 @@ end
                 "edge" => ["r01"],
                 "all:children" => ["leaf", "spine","vqfx10k-pfe","hosts","edge"]
             }
-            ansible.playbook = "pb.config.deploy-junos"
+            ansible.playbook = "pb.config.deploy-junos.yaml"
         end
     end
 end
