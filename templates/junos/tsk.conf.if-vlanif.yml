@@ -6,6 +6,9 @@
     marker: ""
     block: |
          {% if vlans is defined %}
+         {% set layer_list = vlans | map(attribute='layer') %}
+         {% if 'layer3' in layer_list %}
+         {{ vlanif_definition }} {
          {% for vlan_group in vlans %}
          {% if vlan_group['layer'] in ['layer3'] %}
          {% set ip = vlan_group['ip_number'] %}
@@ -22,4 +25,6 @@
          {% endfor %}
          {% endif %}
          {% endfor %}
+          }
+         {% endif %}
          {% endif %}
