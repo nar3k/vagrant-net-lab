@@ -1,0 +1,16 @@
+
+
+- name: fabric_interfaces
+  blockinfile:
+    path: ./config/{{inventory_hostname}}.conf
+    marker: ""
+    block: |
+      {% if ports.aggregated_ports is defined %}
+      {% for port_master,port_slaves in ports.aggregated_ports.items() %}
+      {% for slave in port_slaves %}
+      {{ slave }} {
+        ether-options 802.3ad {{ port_master }};
+      }
+      {% endfor %}
+      {% endfor %}
+      {% endif %}

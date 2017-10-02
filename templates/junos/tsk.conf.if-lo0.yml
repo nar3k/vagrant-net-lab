@@ -5,11 +5,13 @@
     path: ./config/{{inventory_hostname}}.conf
     marker: ""
     block: |
-       lo0 {
-         unit 0 {
-           family inet {
-             address {{ network_db['ospf-loopback01']}}.{{ id }}/32;
-             address {{ network_db['ospf-loopback02']}}.{{ id }}/32;
+      {% if loopback_id is defined %}
+         lo0 {
+           unit 0 {
+             family inet {
+               address {{ network_db['ospf-loopback01']['net'] | ipaddr(loopback_id) | ipaddr('address')}}/32;
+               address {{ network_db['ospf-loopback02']['net'] | ipaddr(loopback_id) | ipaddr('address')}}/32;
+             }
            }
          }
-       }
+      {% endif %}

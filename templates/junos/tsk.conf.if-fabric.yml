@@ -12,9 +12,9 @@
                unit 0 {
            family inet {
             {% if loop.index % 2 != 0 %}
-             unnumbered-address lo0.0 preferred-source-address {{ network_db['ospf-loopback01']}}.{{ id }};
+             unnumbered-address lo0.0 preferred-source-address {{ network_db['ospf-loopback01']['net'] | ipaddr(loopback_id) | ipaddr('address')}};
             {% else %}
-            unnumbered-address lo0.0 preferred-source-address {{ network_db['ospf-loopback02']}}.{{ id }};
+            unnumbered-address lo0.0 preferred-source-address {{ network_db['ospf-loopback01']['net'] | ipaddr(loopback_id) | ipaddr('address')}};
             {% endif %}
            }
          }

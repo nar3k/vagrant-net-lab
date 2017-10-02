@@ -1,16 +1,9 @@
-grouped_vlans_db:
-  underlays:
-    underlay-mgmt:
-      un-mgmt-esxi: 2000
-      un-mgmt-vmotion: 2001
-      un-mgmt-vsan: 2003
-  services:
-    external:
-      svc-web-dmz: 2500
-etc_vlans_db:
-  vteps:
-    vtep-mgmt01: 2004
-    vtep-comp01: 2011
-  storages:
-    stor-nfs01: 2010
-    stor-nfs02: 2010
+vlan_db:
+  un-mgmt-esxi: 2000
+  un-mgmt-vmotion: 2001
+  un-mgmt-vsan: 2003
+  svc-web-dmz: 2500
+  vtep-mgmt01: 2004
+  vtep-comp01: 2011
+  stor-nfs01: 2010
+  stor-nfs02: 2010

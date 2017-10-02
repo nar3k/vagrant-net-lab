@@ -5,18 +5,37 @@
     path: ./config/{{inventory_hostname}}.conf
     marker: ""
     block: |
-      {% if ports.single_ports is defined %}
-       {% for port in ports.single_ports.access_ports %}
-         {{ port.name }} {
+       {% if ports.access_ports is defined %}
+       {% for port_group in ports.access_ports %}
+       {% for port in port_group.ports %}
+         {{ port }} {
 
                unit 0 {
            family ethernet-switching {
             {{ switchport_pattern }} access;
             vlan {
-              members {{ etc_vlans_db[port.group][port.vlan] }};
+              members {{ port_group.vlan }};
             }
            }
          }
        }
        {% endfor %}
-      {% endif %}
+       {% endfor %}
+       {% endif %}
+
+       {% if ports.trunk_ports is defined %}
+        {% for port_group in ports.trunk_ports %}
+        {% for port in port_group.ports %}
+          {{ port }} {
+                unit 0 {
+            family ethernet-switching {
+             {{ switchport_pattern }} trunk;
+             vlan {
+               members [{% for vlan in port_group.vlans %} {{ vlan }}{% endfor %} ] ;
+             }
+            }
+          }
+        }
+        {% endfor %}
+        {% endfor %}
+        {% endif %}

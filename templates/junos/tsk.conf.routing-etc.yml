@@ -14,9 +14,17 @@
 
       }
       routing-options {
-          router-id {{network_db['ospf-loopback01']}}.{{ id }}
+          router-id {{ network_db['ospf-loopback01']['net'] | ipaddr(loopback_id) | ipaddr('address')}};
           forwarding-table {
 
               export  load-balancing-policy;
           }
+      }
+      chassis {
+        aggregated-devices {
+            ethernet {
+                device-count 200;
+            }
+        }
+
       }

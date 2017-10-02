@@ -32,6 +32,7 @@ ext-host01
 [leaf]
 leaf01
 leaf02
+exit01
 
 [spine]
 spine01
@@ -39,7 +40,7 @@ spine02
 
 [edge]
 exit01
-r01
+
 
 [fabric:children]
 leaf

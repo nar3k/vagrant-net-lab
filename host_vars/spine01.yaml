@@ -1,10 +1,4 @@
-
-fabric_ports:
-  - xe-0/0/0
-  - xe-0/0/1
-  - xe-0/0/2
-  - xe-0/0/3
-id: 1
+loopback_id: 1
 ports:
   fabric_ports:
     - xe-0/0/0

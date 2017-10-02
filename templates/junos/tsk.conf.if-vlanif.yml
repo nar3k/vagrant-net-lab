@@ -6,44 +6,20 @@
     marker: ""
     block: |
          {% if vlans is defined %}
-         {{ vlanif_interface }} {
-           {% for non_grouped_vlan in ['interconnects','storages','vteps']%}
-           {% if non_grouped_vlan  in vlans['layer3'] %}
-           {% for vlan_name,conn_id in vlans['layer3'][non_grouped_vlan].iteritems() %}
-         unit {{ etc_vlans_db[non_grouped_vlan][vlan_name]  }} {
-           description {{ vlan_name }};
-           family inet {
-           {% if non_grouped_vlan in ['interconnects'] %}
-           address {{ network_db[non_grouped_vlan][vlan_name] | ipaddr(conn_id) }};
-           {% elif non_grouped_vlan in ['vteps'] %}
-           address {{ network_db[non_grouped_vlan][vlan_name] }}.{{conn_id}}/27;
-           {% elif non_grouped_vlan in ['storages'] %}
-           address {{ network_db[non_grouped_vlan][vlan_name] | ipaddr(1) }};
-           {% endif %}
-         }
-         }
-           {% endfor %}
-           {% endif %}
-           {% endfor %}
-           {% for grouped_vlan in ['services','underlays'] %}
-           {% if grouped_vlan in vlans['layer3'] %}
-           {% for vlan_group in vlans['layer3'][grouped_vlan] %}
-           {% for vlan_name,vlan_id in grouped_vlans_db[grouped_vlan][vlan_group].iteritems() %}
-         unit {{ vlan_id }} {
-           description {{ vlan_name }};
-           family inet {
-             {% if grouped_vlan in ['underlays'] %}
-             address {{ network_db[grouped_vlan][vlan_name]}}.{{underlay_ip}}/27;
-             {% elif grouped_vlan in ['services'] %}
-             address {{ network_db[grouped_vlan][vlan_name] | ipaddr(1) }};
-            {% endif %}
-           }
-          }
+         {% for vlan_group in vlans %}
+         {% if vlan_group['layer'] in ['layer3'] %}
+         {% set ip = vlan_group['ip_number'] %}
+         {% for vlan_name in vlan_group.vlan_list %}
 
-         {% endfor %}
+         unit {{ network_db[vlan_name]['vlan'] }}{
+           description {{ vlan_name }};
+           family inet {
+
+             address {{ network_db[vlan_name]['net'] | ipaddr(ip) }};
+
+             }
+         }
          {% endfor %}
          {% endif %}
          {% endfor %}
-
-         }
          {% endif %}

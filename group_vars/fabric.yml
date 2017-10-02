@@ -1,5 +1,5 @@
 os: junos
 ospf_area: 0
-vlanif_interface: irb
+vlanif_definition: irb
 switchport_pattern: interface-mode
 password: ""

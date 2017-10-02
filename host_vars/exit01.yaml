@@ -1,0 +1,26 @@
+vlans:
+  - layer: layer3
+    type: interconnect
+    ip_number: 1
+    vlan_list:
+      - i-leaf-exit01
+  - layer: layer2
+    type: service
+    vlan_list:
+      - dmz-web01
+loopback_id: 3
+ports:
+  aggregated_ports:
+    ae01: ['xe-0/0/0','xe-0/0/1']
+    ae02: ['xe-0/0/2','xe-0/0/3']
+  access_ports:
+    - vlan: dmz-web01
+      ports:
+       - xe-0/0/4
+  trunk_ports:
+   - vlans: [i-leaf-exit01]
+     ports:
+      - ae01
+   - vlans: [dmz-web01]
+     ports:
+      - ae02

@@ -12,14 +12,16 @@
       debug: "{{ os }}"
     - include: "./templates/{{ os }}/tsk.conf.start.yml"
     - include: ./templates/{{ os }}/tsk.conf.vlan.yml
-    - name: going to interfaces
-      set_fact:
-       current_block: interfaces
+    - set_fact: { current_block: interfaces }
     - include: ./templates/{{ os }}/tsk.conf.br-open.yml
     - include: ./templates/{{ os }}/tsk.conf.if-etc.yml
+    - set_fact: { current_block: "{{ vlanif_definition }}" }
+    - include: ./templates/{{ os }}/tsk.conf.br-open.yml
     - include: ./templates/{{ os }}/tsk.conf.if-vlanif.yml
+    - include: ./templates/{{ os }}/tsk.conf.br-close.yml
     - include: ./templates/{{ os }}/tsk.conf.if-lo0.yml
     - include: ./templates/{{ os }}/tsk.conf.if-fabric.yml
+    - include: ./templates/{{ os }}/tsk.conf.if-aggrports.yml
     - include: ./templates/{{ os }}/tsk.conf.if-switchports.yml
     - include: ./templates/{{ os }}/tsk.conf.br-close.yml
     - name: going to protocols
