@@ -20,7 +20,7 @@ ports:
     - xe-0/0/1
   aggregated_ports:
     ae01: ['xe-0/0/2','xe-0/0/3']
-  trunk_ports:
-   - vlans: [i-leaf-exit01]
+  access_ports:
+   - vlan: i-leaf-exit01
      ports:
       - ae01
