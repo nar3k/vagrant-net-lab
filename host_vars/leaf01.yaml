@@ -18,6 +18,4 @@ ports:
     - vlan: stor-nfs01
       ports:
        - xe-0/0/2
-    - vlan: i-leaf-exit01
-      ports:
-       - ae01
+    
