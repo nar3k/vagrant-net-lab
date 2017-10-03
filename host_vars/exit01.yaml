@@ -16,10 +16,6 @@ ports:
     - vlan: dmz-web01
       ports:
        - xe-0/0/4
-  trunk_ports:
-   - vlans: [i-leaf-exit01]
-     ports:
-      - ae01
-   - vlans: [dmz-web01]
-     ports:
-      - xe-0/0/3
+    - vlan: i-leaf-exit01
+      ports:
+       - ae01
