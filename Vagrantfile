@@ -15,7 +15,7 @@ ports_map = { 'leaf01' => [1,2,8],
                }
 host_port_map = { 'dc-host01' => 8,
                    'dmz-host01' => 9,
-                   'ext-host01' => 10
+                   'ext-host01' => 10,
                  }
 
 }
