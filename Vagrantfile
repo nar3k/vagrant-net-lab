@@ -11,14 +11,14 @@ ports_map = { 'leaf01' => [1,2,8],
               'spine01' => [1,3],
               'spine02' => [2,4],
               'exit01' => [5,6,7,9],
-              'r01'=>[7,10],
+              'r01'=>[7,10]
                }
 host_port_map = { 'dc-host01' => 8,
                    'dmz-host01' => 9,
-                   'ext-host01' => 10,
+                   'ext-host01' => 10
                  }
 
-}
+
 vqfx_devices = ['leaf01','leaf02','spine01','spine02','exit01']
 vsrx_devices = ['r01']
 host_devices = ['dc-host01', 'dmz-host01','ext-host01']
