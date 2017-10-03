@@ -19,8 +19,7 @@ host_port_map = { 'dc-host01' => 8,
                  }
 
 
-vqfx_devices = ['leaf01','leaf02','spine01','spine02','exit01']
-vsrx_devices = ['r01']
+vqfx_devices = ['leaf01','leaf02','spine01','spine02','exit01','r01']
 host_devices = ['dc-host01', 'dmz-host01','ext-host01']
 
 
@@ -67,17 +66,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             # Dataplane ports
             ports_map[id].each do |seg_id|
                vqfx.vm.network 'private_network', auto_config: false, nic_type: '82540EM', virtualbox__intnet: "#{UUID}_seg#{[seg_id]}"
-            end
-        end
-    end
-    ##VQFX
-    vsrx_devices.each do |id|
-         re_name = ( id ).to_sym
-         config.vm.define re_name do |vsrx|
-             vsrx.vm.hostname = "#{id}"
-             vsrx.vm.box = "juniper/ffp-12.1X47-D15.4-packetmode"
-             ports_map[id].each do |seg_id|
-                vsrx.vm.network 'private_network', auto_config: false, virtualbox__intnet: "#{UUID}_seg#{[seg_id]}"
             end
         end
     end
