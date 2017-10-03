@@ -6,22 +6,21 @@ VAGRANTFILE_API_VERSION = "2"
 ## Generate a unique ID for this project
 UUID = "OTYUID"
 
-ports_map = { 'leaf01' => [1,2,3,4,13],
-              'leaf02' => [5,6,7,8,9,10,14],
-              'spine01' => [1,2,5,6],
-              'spine02' => [3,4,7,8],
-              'exit01' => [9,10,11,12,15],
-              'r01'=>[11,12,16],
+ports_map = { 'leaf01' => [1,2,8],
+              'leaf02' => [3,4,5,6],
+              'spine01' => [1,3],
+              'spine02' => [2,4],
+              'exit01' => [5,6,7,9],
+              'r01'=>[7,10],
                }
-host_port_map = { 'dc-host01' => 13,
-                   'dc-host02' => 14,
-                   'dmz-host01' => 15,
-                   'ext-host01' => 16,
+host_port_map = { 'dc-host01' => 8,
+                   'dmz-host01' => 9,
+                   'ext-host01' => 10,
 
 }
 vqfx_devices = ['leaf01','leaf02','spine01','spine02','exit01']
 vsrx_devices = ['r01']
-host_devices = ['dc-host01','dc-host02', 'dmz-host01','ext-host01']
+host_devices = ['dc-host01', 'dmz-host01','ext-host01']
 
 
 
@@ -102,7 +101,7 @@ end
         config.vm.provision "ansible" do |ansible|
             ansible.groups = {
                 "vqfx10k-pfe"  => ["leaf01-pfe", "leaf01-pfe","spine01-pfe","spine02-pfe","exit01-pfe"],
-                "hosts" => ['dc-host01','dc-host02', 'dmz-host01','ext-host01'],
+                "hosts" => ['dc-host01', 'dmz-host01','ext-host01'],
                 "leaf" => ["leaf01","leaf02","exit01"],
                 "spine" => ["spine01","spine02"],
                 "fabric:children" => ["leaf","spine"],

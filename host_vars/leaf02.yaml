@@ -18,14 +18,8 @@ ports:
   fabric_ports:
     - xe-0/0/0
     - xe-0/0/1
-    - xe-0/0/2
-    - xe-0/0/3
   aggregated_ports:
-    ae01: ['xe-0/0/4','xe-0/0/5']
-  access_ports:
-    - vlan: stor-nfs02
-      ports:
-       - xe-0/0/6
+    ae01: ['xe-0/0/2','xe-0/0/3']
   trunk_ports:
    - vlans: [i-leaf-exit01]
      ports:
