@@ -1,0 +1,12 @@
+---
+- name: test
+  hosts: fabric
+  gather_facts: no
+  connection: local
+  tasks:
+  - name: include
+    include_vars: ./host_vars1/{{ inventory_hostname }}.yaml
+  - name: debug
+    debug:
+     var: loopback_id
+    tags: [print_action]
