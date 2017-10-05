@@ -3,11 +3,11 @@
   hosts: fabric
   connection: local
   gather_facts: no
-  vars_files:
-   - ./all_manual/ports.yaml
   tasks:
   - name: "prepate tmp"
     file: path=./tmp state=directory
+  - name: include cabling vars
+    include_vars: ./cabling_vars/{{ inventory_hostname }}.yaml
   - name: "Generate validation rules"
     template:
       src: "./templates/validate/lldp.j2"
@@ -35,18 +35,17 @@
   - name: "Failed Compliance Report prepare"
     file: path=./reports/lldp.report state=absent
   - name: "Failed Compliance Report save"
-    blockinfile:
-      path: ./reports/tmp/{{ inventory_hostname }}.report
-      marker: "###{{ inventory_hostname }} FAILED CONNECTIONS###"
-      create: yes
-      block: |
+    copy:
+      dest: ./reports/tmp/{{ inventory_hostname }}.report
+      content: |
+        {{ inventory_hostname }} PORTS
         {% for name,state in validation.compliance_report.get_lldp_neighbors.present.items() %}
         {% if not state.complies %}
-        PORT {{ name }}
-        ACTUAL   CONNECTION  DEVICE {{ state.actual_value[0].hostname }} PORT {{ state.actual_value[0].port }}
-        EXPECTED CONNECTION  DEVICE {{ state.expected_value[0].hostname }} PORT {{ state.expected_value[0].port }}
+        TO DEVICE CHECK {% if state.actual_value[0].hostname == state.expected_value[0].hostname %} OK {% else %} FAIL {% endif %}
+        TO PORT CHECK CHECK {% if state.actual_value[0].port == state.expected_value[0].port %} OK {% else %} FAIL {% endif %}
         {% endif %}
         {% endfor %}
+       delegate_to: localhost
     when: not validation.compliance_report.complies
   - name: "Failed Compliance Report save"
     assemble:
