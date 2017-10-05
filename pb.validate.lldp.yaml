@@ -44,8 +44,10 @@
         {% if not state.complies %}
         ----
         NEIGHBOR {{ state.actual_value[0].hostname }} PORT {{ state.actual_value[0].port }}
-        TO DEVICE_CHECK {% if state.actual_value[0].hostname == state.expected_value[0].hostname %} OK {% else %} FAIL {% endif %}
-        TO PORT_CHECK {% if state.actual_value[0].port == state.expected_value[0].port %} OK {% else %} FAIL {% endif %}
+        TO DEVICE_CHECK {% if state.actual_value[0].hostname == state.expected_value[0].hostname %} OK {% else %} FAIL
+        {% endif %}
+        TO PORT_CHECK {% if state.actual_value[0].port == state.expected_value[0].port %} OK {% else %} FAIL
+        {% endif %}
         SHOULD BE NEIGHBOR {{ state.expected_value[0].hostname }} PORT {{ state.expected_value[0].port }}
         ----
         {% endif %}
