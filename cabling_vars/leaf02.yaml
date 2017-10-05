@@ -7,7 +7,7 @@ ports:
     port_name: xe-0/0/0
     self_logical_n: 1
   - link_type: interswitch
-    neighbor_device: spine02
+    neighbor_device: spine05 #intential mistake
     neighbor_logical_n: 1
     neighbor_port: xe-0/0/1
     port_name: xe-0/0/1

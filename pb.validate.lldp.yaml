@@ -43,6 +43,8 @@
         {% if not state.complies %}
         TO DEVICE CHECK {% if state.actual_value[0].hostname == state.expected_value[0].hostname %} OK {% else %} FAIL {% endif %}
         TO PORT CHECK CHECK {% if state.actual_value[0].port == state.expected_value[0].port %} OK {% else %} FAIL {% endif %}
+        ACTUAL   CONNECTION  DEVICE {{ state.actual_value[0].hostname }} PORT {{ state.actual_value[0].port }}
+        EXPECTED CONNECTION  DEVICE {{ state.expected_value[0].hostname }} PORT {{ state.expected_value[0].port }}
         {% endif %}
         {% endfor %}
     delegate_to: localhost
