@@ -45,7 +45,7 @@
         TO PORT CHECK CHECK {% if state.actual_value[0].port == state.expected_value[0].port %} OK {% else %} FAIL {% endif %}
         {% endif %}
         {% endfor %}
-       delegate_to: localhost
+      delegate_to: localhost
     when: not validation.compliance_report.complies
   - name: "Failed Compliance Report save"
     assemble:
