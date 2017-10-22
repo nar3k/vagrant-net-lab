@@ -13,5 +13,5 @@
         user: root
         passwd: Juniper
         file: "./config/{{ inventory_hostname }}.conf"
-        replace_config: true
+        overwrite: yes
         replace: no
