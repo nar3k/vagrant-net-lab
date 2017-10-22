@@ -1,8 +1,0 @@
-
-
-    - name: end of the file
-      blockinfile:
-        path: ./config/{{inventory_hostname}}.conf
-        marker: ""
-        block: |
-          }

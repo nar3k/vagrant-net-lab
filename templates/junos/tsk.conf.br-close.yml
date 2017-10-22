@@ -1,8 +1,0 @@
-
-
-- name: closing {{ current_block }}
-  blockinfile:
-    path: ./config/{{inventory_hostname}}.conf
-    marker: ""
-    block: |
-      }
