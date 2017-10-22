@@ -1,0 +1,22 @@
+# This task gets all Junos configuration from all devices
+- name: Build and deploy configuration
+  hosts: fabric
+  connection: local
+  gather_facts: no
+  roles:
+    - Juniper.junos
+  tasks:
+    - name: Deploy config to device ... please wait
+      junos_get_table:
+        host: "{{ ansible_ssh_host }}"
+        port: "{{ ansible_ssh_port }}"
+        user: root
+        passwd: Juniper
+        table: EthernetSwitchingTable
+        file: ethernetswitchingtable.yml
+        logfile: mac.log
+      register: result
+    - name: print result
+      debug:
+        var: result
+      tags: [ print_action ]

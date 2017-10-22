@@ -1,0 +1,360 @@
+2017-10-22 08:45:24,214:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 08:45:24,214:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 08:45:24,229:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 08:45:24,233:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:45:24,234:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 08:45:24,234:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:45:24,248:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:45:24,254:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:45:24,289:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 08:45:24,305:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:45:24,338:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:45:24,352:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:45:24,353:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:45:24,358:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:45:24,402:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:45:24,519:ncclient.transport.session:initialized: session-id=69320 | server_capabilities=<dictionary-keyiterator object at 0x7ffaee374680>
+2017-10-22 08:45:24,535:ncclient.transport.session:initialized: session-id=70236 | server_capabilities=<dictionary-keyiterator object at 0x7f3b58bb3680>
+2017-10-22 08:45:24,544:ncclient.transport.session:initialized: session-id=70038 | server_capabilities=<dictionary-keyiterator object at 0x7f6506bd4680>
+2017-10-22 08:45:24,550:ncclient.transport.session:initialized: session-id=70147 | server_capabilities=<dictionary-keyiterator object at 0x7ff043c8c680>
+2017-10-22 08:45:24,603:ncclient.transport.session:initialized: session-id=70032 | server_capabilities=<dictionary-keyiterator object at 0x7f04e6359680>
+2017-10-22 08:48:59,255:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 08:48:59,270:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:48:59,315:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 08:48:59,328:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:48:59,339:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 08:48:59,353:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:48:59,365:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 08:48:59,367:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 08:48:59,381:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:48:59,385:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:48:59,392:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:48:59,444:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:48:59,458:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:48:59,483:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:48:59,484:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:48:59,540:ncclient.transport.session:initialized: session-id=70245 | server_capabilities=<dictionary-keyiterator object at 0x7f21a0397680>
+2017-10-22 08:48:59,606:ncclient.transport.session:initialized: session-id=70158 | server_capabilities=<dictionary-keyiterator object at 0x7f30a62d9680>
+2017-10-22 08:48:59,636:ncclient.transport.session:initialized: session-id=69331 | server_capabilities=<dictionary-keyiterator object at 0x7f356b3e0680>
+2017-10-22 08:48:59,646:ncclient.transport.session:initialized: session-id=70047 | server_capabilities=<dictionary-keyiterator object at 0x7f1619de0680>
+2017-10-22 08:48:59,680:ncclient.transport.session:initialized: session-id=70045 | server_capabilities=<dictionary-keyiterator object at 0x7fb9cdc10680>
+2017-10-22 08:49:27,622:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 08:49:27,631:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 08:49:27,633:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 08:49:27,635:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:49:27,647:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:49:27,654:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:49:27,733:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:49:27,744:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:49:27,752:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 08:49:27,755:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 08:49:27,756:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:49:27,767:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:49:27,768:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:49:27,868:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:49:27,872:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:49:27,879:ncclient.transport.session:initialized: session-id=70052 | server_capabilities=<dictionary-keyiterator object at 0x7f4e5e2f9680>
+2017-10-22 08:49:27,932:ncclient.transport.session:initialized: session-id=70250 | server_capabilities=<dictionary-keyiterator object at 0x7f7f48085680>
+2017-10-22 08:49:27,945:ncclient.transport.session:initialized: session-id=69336 | server_capabilities=<dictionary-keyiterator object at 0x7fe992343680>
+2017-10-22 08:49:28,014:ncclient.transport.session:initialized: session-id=70163 | server_capabilities=<dictionary-keyiterator object at 0x7f01e6575680>
+2017-10-22 08:49:28,069:ncclient.transport.session:initialized: session-id=70054 | server_capabilities=<dictionary-keyiterator object at 0x7f3dc7b0e680>
+2017-10-22 08:49:39,377:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 08:49:39,391:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 08:49:39,392:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:49:39,393:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 08:49:39,404:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:49:39,414:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:49:39,461:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 08:49:39,474:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:49:39,477:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 08:49:39,491:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:49:39,498:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:49:39,514:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:49:39,529:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:49:39,576:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:49:39,598:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:49:39,644:ncclient.transport.session:initialized: session-id=70057 | server_capabilities=<dictionary-keyiterator object at 0x7fe04005e680>
+2017-10-22 08:49:39,662:ncclient.transport.session:initialized: session-id=70168 | server_capabilities=<dictionary-keyiterator object at 0x7fb548ef4680>
+2017-10-22 08:49:39,674:ncclient.transport.session:initialized: session-id=69341 | server_capabilities=<dictionary-keyiterator object at 0x7f699cd31680>
+2017-10-22 08:49:39,771:ncclient.transport.session:initialized: session-id=70059 | server_capabilities=<dictionary-keyiterator object at 0x7fa3b3f34680>
+2017-10-22 08:49:39,778:ncclient.transport.session:initialized: session-id=70257 | server_capabilities=<dictionary-keyiterator object at 0x7f058f20a680>
+2017-10-22 08:50:00,869:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 08:50:00,882:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:50:00,884:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 08:50:00,884:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 08:50:00,884:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 08:50:00,886:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 08:50:00,897:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:50:00,900:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:50:00,904:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:50:00,904:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:50:00,988:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:50:01,000:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:50:01,003:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:50:01,022:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:50:01,027:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:50:01,142:ncclient.transport.session:initialized: session-id=70175 | server_capabilities=<dictionary-keyiterator object at 0x7f890e04d680>
+2017-10-22 08:50:01,149:ncclient.transport.session:initialized: session-id=70064 | server_capabilities=<dictionary-keyiterator object at 0x7fa1faf9d680>
+2017-10-22 08:50:01,156:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:50:01,156:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:50:01,163:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:50:01,164:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:50:01,200:ncclient.transport.session:initialized: session-id=69348 | server_capabilities=<dictionary-keyiterator object at 0x7f3b41b75680>
+2017-10-22 08:50:01,221:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:50:01,222:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:50:01,268:ncclient.transport.session:initialized: session-id=70062 | server_capabilities=<dictionary-keyiterator object at 0x7f823d616680>
+2017-10-22 08:50:01,268:ncclient.transport.session:initialized: session-id=70262 | server_capabilities=<dictionary-keyiterator object at 0x7f8ffefef6d8>
+2017-10-22 08:50:01,272:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:50:01,279:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:50:01,288:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:50:01,288:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:50:01,289:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:50:01,289:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:50:01,289:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:50:01,354:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:50:01,355:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:52:27,921:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 08:52:27,927:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 08:52:27,930:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 08:52:27,938:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:52:27,942:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:52:27,944:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:52:28,034:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:52:28,042:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:52:28,043:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:52:28,051:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 08:52:28,059:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 08:52:28,069:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:52:28,077:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:52:28,164:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:52:28,172:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:52:28,189:ncclient.transport.session:initialized: session-id=70078 | server_capabilities=<dictionary-keyiterator object at 0x7f98aef85680>
+2017-10-22 08:52:28,208:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:52:28,208:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:52:28,256:ncclient.transport.session:initialized: session-id=70187 | server_capabilities=<dictionary-keyiterator object at 0x7f194e78c680>
+2017-10-22 08:52:28,267:ncclient.transport.session:initialized: session-id=70072 | server_capabilities=<dictionary-keyiterator object at 0x7fa63f295680>
+2017-10-22 08:52:28,268:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:52:28,268:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:52:28,279:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:52:28,279:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:52:28,297:ncclient.transport.session:initialized: session-id=69360 | server_capabilities=<dictionary-keyiterator object at 0x7fdf2c572680>
+2017-10-22 08:52:28,309:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:52:28,310:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:52:28,323:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:52:28,336:ncclient.transport.session:initialized: session-id=70274 | server_capabilities=<dictionary-keyiterator object at 0x7f58bd3e7680>
+2017-10-22 08:52:28,344:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:52:28,349:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:52:28,349:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:52:28,384:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:52:28,425:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:52:28,466:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:53:51,874:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 08:53:51,888:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:53:51,906:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 08:53:51,909:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 08:53:51,923:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:53:51,926:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:53:51,982:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 08:53:51,994:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 08:53:51,995:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:53:51,996:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:53:52,009:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:53:52,024:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:53:52,030:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:53:52,092:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:53:52,125:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:53:52,176:ncclient.transport.session:initialized: session-id=70282 | server_capabilities=<dictionary-keyiterator object at 0x7fcade55f680>
+2017-10-22 08:53:52,188:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:53:52,189:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:53:52,207:ncclient.transport.session:initialized: session-id=70195 | server_capabilities=<dictionary-keyiterator object at 0x7fcb82e1a680>
+2017-10-22 08:53:52,219:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:53:52,219:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:53:52,222:ncclient.transport.session:initialized: session-id=70086 | server_capabilities=<dictionary-keyiterator object at 0x7f9f6928c680>
+2017-10-22 08:53:52,234:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:53:52,234:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:53:52,286:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:53:52,292:ncclient.transport.session:initialized: session-id=70084 | server_capabilities=<dictionary-keyiterator object at 0x7f03d47ac680>
+2017-10-22 08:53:52,296:ncclient.transport.session:initialized: session-id=69368 | server_capabilities=<dictionary-keyiterator object at 0x7f39416bd680>
+2017-10-22 08:53:52,299:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:53:52,305:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:53:52,306:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:53:52,306:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:53:52,308:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:53:52,309:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:53:52,421:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:53:52,423:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:55:05,299:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 08:55:05,313:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:55:05,339:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 08:55:05,342:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 08:55:05,359:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:55:05,362:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:55:05,375:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 08:55:05,384:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 08:55:05,395:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:55:05,404:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:55:05,417:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:55:05,461:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:55:05,465:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:55:05,494:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:55:05,505:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:55:05,592:ncclient.transport.session:initialized: session-id=70203 | server_capabilities=<dictionary-keyiterator object at 0x7f3542b28680>
+2017-10-22 08:55:05,604:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:55:05,605:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:55:05,617:ncclient.transport.session:initialized: session-id=69376 | server_capabilities=<dictionary-keyiterator object at 0x7f5c9ede0680>
+2017-10-22 08:55:05,629:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:55:05,630:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:55:05,644:ncclient.transport.session:initialized: session-id=70094 | server_capabilities=<dictionary-keyiterator object at 0x7fef737bd680>
+2017-10-22 08:55:05,656:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:55:05,656:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:55:05,689:ncclient.transport.session:initialized: session-id=70090 | server_capabilities=<dictionary-keyiterator object at 0x7f11bfa36680>
+2017-10-22 08:55:05,695:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:55:05,701:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:55:05,702:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:55:05,721:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:55:05,735:ncclient.transport.session:initialized: session-id=70290 | server_capabilities=<dictionary-keyiterator object at 0x7fa9f844e680>
+2017-10-22 08:55:05,748:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:55:05,748:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 08:55:05,766:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:55:05,771:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:55:05,814:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:56:17,400:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 08:56:17,404:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 08:56:17,405:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 08:56:17,418:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:56:17,419:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:56:17,423:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:56:17,476:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 08:56:17,490:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:56:17,491:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 08:56:17,504:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:56:17,517:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:56:17,521:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:56:17,537:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:56:17,593:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:56:17,597:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:56:17,691:ncclient.transport.session:initialized: session-id=70215 | server_capabilities=<dictionary-keyiterator object at 0x7f023d0a6680>
+2017-10-22 08:56:17,701:ncclient.transport.session:initialized: session-id=69388 | server_capabilities=<dictionary-keyiterator object at 0x7fa224333680>
+2017-10-22 08:56:17,704:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:56:17,704:CONFIG:127.0.0.1:Uncaught exception - please report: __init__() takes exactly 3 arguments (2 given)
+2017-10-22 08:56:17,704:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:56:17,705:ncclient.transport.session:initialized: session-id=70302 | server_capabilities=<dictionary-keyiterator object at 0x7fd5a6ccd680>
+2017-10-22 08:56:17,714:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:56:17,714:CONFIG:127.0.0.1:Uncaught exception - please report: __init__() takes exactly 3 arguments (2 given)
+2017-10-22 08:56:17,714:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:56:17,724:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:56:17,725:CONFIG:127.0.0.1:Uncaught exception - please report: __init__() takes exactly 3 arguments (2 given)
+2017-10-22 08:56:17,725:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:56:17,746:ncclient.transport.session:initialized: session-id=70106 | server_capabilities=<dictionary-keyiterator object at 0x7f2b97b73680>
+2017-10-22 08:56:17,758:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:56:17,758:CONFIG:127.0.0.1:Uncaught exception - please report: __init__() takes exactly 3 arguments (2 given)
+2017-10-22 08:56:17,758:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:56:17,785:ncclient.transport.session:initialized: session-id=70098 | server_capabilities=<dictionary-keyiterator object at 0x7f15a1860680>
+2017-10-22 08:56:17,801:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:56:17,801:CONFIG:127.0.0.1:Uncaught exception - please report: __init__() takes exactly 3 arguments (2 given)
+2017-10-22 08:56:17,802:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:56:53,110:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 08:56:53,131:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:56:53,164:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 08:56:53,177:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:56:53,180:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 08:56:53,185:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 08:56:53,200:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:56:53,205:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:56:53,232:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:56:53,253:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 08:56:53,267:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 08:56:53,283:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:56:53,300:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:56:53,307:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:56:53,362:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 08:56:53,406:ncclient.transport.session:initialized: session-id=70222 | server_capabilities=<dictionary-keyiterator object at 0x7f8ce83f9680>
+2017-10-22 08:56:53,413:ncclient.transport.session:initialized: session-id=70105 | server_capabilities=<dictionary-keyiterator object at 0x7f121770f680>
+2017-10-22 08:56:53,418:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:56:53,418:CONFIG:127.0.0.1:Uncaught exception - please report: Table is empty, use get()
+2017-10-22 08:56:53,418:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:56:53,425:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:56:53,425:CONFIG:127.0.0.1:Uncaught exception - please report: Table is empty, use get()
+2017-10-22 08:56:53,425:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:56:53,481:ncclient.transport.session:initialized: session-id=70309 | server_capabilities=<dictionary-keyiterator object at 0x7f1ca0951680>
+2017-10-22 08:56:53,494:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:56:53,494:CONFIG:127.0.0.1:Uncaught exception - please report: Table is empty, use get()
+2017-10-22 08:56:53,494:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:56:53,536:ncclient.transport.session:initialized: session-id=70111 | server_capabilities=<dictionary-keyiterator object at 0x7fad104f5680>
+2017-10-22 08:56:53,549:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:56:53,549:CONFIG:127.0.0.1:Uncaught exception - please report: Table is empty, use get()
+2017-10-22 08:56:53,550:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 08:56:53,560:ncclient.transport.session:initialized: session-id=69393 | server_capabilities=<dictionary-keyiterator object at 0x7f6615db4680>
+2017-10-22 08:56:53,581:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 08:56:53,581:CONFIG:127.0.0.1:Uncaught exception - please report: Table is empty, use get()
+2017-10-22 08:56:53,581:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 09:01:52,704:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 09:01:52,719:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 09:01:52,745:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 09:01:52,751:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 09:01:52,764:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 09:01:52,766:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 09:01:52,766:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 09:01:52,781:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 09:01:52,808:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 09:01:52,819:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 09:01:52,824:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 09:01:52,862:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 09:01:52,869:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 09:01:52,879:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 09:01:52,923:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 09:01:52,990:ncclient.transport.session:initialized: session-id=70123 | server_capabilities=<dictionary-keyiterator object at 0x7f8c5a92b680>
+2017-10-22 09:01:53,007:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 09:01:53,008:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 09:01:53,036:ncclient.transport.session:initialized: session-id=70240 | server_capabilities=<dictionary-keyiterator object at 0x7f2df5d78680>
+2017-10-22 09:01:53,047:ncclient.transport.session:initialized: session-id=70327 | server_capabilities=<dictionary-keyiterator object at 0x7f6673bc4680>
+2017-10-22 09:01:53,050:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 09:01:53,051:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 09:01:53,060:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 09:01:53,060:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 09:01:53,073:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 09:01:53,078:ncclient.transport.session:initialized: session-id=70142 | server_capabilities=<dictionary-keyiterator object at 0x7fde673bd680>
+2017-10-22 09:01:53,090:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 09:01:53,090:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 09:01:53,118:ncclient.transport.session:initialized: session-id=69419 | server_capabilities=<dictionary-keyiterator object at 0x7f4b182a4680>
+2017-10-22 09:01:53,130:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 09:01:53,130:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 09:01:53,155:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 09:01:53,167:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 09:01:53,176:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 09:01:53,245:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 09:03:11,607:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2200
+2017-10-22 09:03:11,622:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 09:03:11,623:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2204
+2017-10-22 09:03:11,624:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2202
+2017-10-22 09:03:11,641:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 09:03:11,643:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 09:03:11,652:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2206
+2017-10-22 09:03:11,675:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 09:03:11,694:CONFIG:127.0.0.1:connecting to host: root@127.0.0.1:2208
+2017-10-22 09:03:11,708:ncclient.transport.ssh:Connected (version 2.0, client OpenSSH_6.6.1)
+2017-10-22 09:03:11,730:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 09:03:11,740:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 09:03:11,749:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 09:03:11,781:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 09:03:11,809:ncclient.transport.ssh:Authentication (password) successful!
+2017-10-22 09:03:11,876:ncclient.transport.session:initialized: session-id=70335 | server_capabilities=<dictionary-keyiterator object at 0x7ff0edefe680>
+2017-10-22 09:03:11,883:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 09:03:11,884:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 09:03:11,900:ncclient.transport.session:initialized: session-id=69433 | server_capabilities=<dictionary-keyiterator object at 0x7fd655cf8680>
+2017-10-22 09:03:11,907:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 09:03:11,907:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 09:03:11,928:ncclient.transport.session:initialized: session-id=70150 | server_capabilities=<dictionary-keyiterator object at 0x7ff7ab561680>
+2017-10-22 09:03:11,932:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 09:03:11,932:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 09:03:11,955:ncclient.transport.session:initialized: session-id=70131 | server_capabilities=<dictionary-keyiterator object at 0x7f83f6c96680>
+2017-10-22 09:03:11,959:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 09:03:11,960:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 09:03:12,005:ncclient.transport.session:initialized: session-id=70248 | server_capabilities=<dictionary-keyiterator object at 0x7f57ddb64680>
+2017-10-22 09:03:12,009:CONFIG:127.0.0.1:Getting data from device
+2017-10-22 09:03:12,009:ncclient.operations.rpc:Requesting 'ExecuteRpc'
+2017-10-22 09:03:12,023:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 09:03:12,048:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 09:03:12,050:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 09:03:12,125:ncclient.operations.rpc:Requesting 'CloseSession'
+2017-10-22 09:03:12,126:ncclient.operations.rpc:Requesting 'CloseSession'
