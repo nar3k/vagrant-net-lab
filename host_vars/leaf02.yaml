@@ -5,6 +5,11 @@ vlans:
     type: service
     service_groups:
      - mgmt_underlay
+  - layer: layer3
+    type: interconnect
+    ip_number: 2
+    vlans:
+      - i-leaf-exit01
 
 unit_id: 3
 
