@@ -34,7 +34,7 @@
                 unit 0 {
             family ethernet-switching {
              {{ switchport_pattern }} trunk;
-             {% if port_group['native_vlan'] is defined %} native-vlan-id {{ port_group['native_vlan'] }} {% endif %};
+             {% if port_group['native_vlan'] is defined %} native-vlan-id {{ port_group['native_vlan'] }} ;{% endif %}
              vlan {
                members [{% if interconnects is defined %}{% if interconnects[port] is defined %} {{ interconnects[port] }}{% endif %}{% endif %} {% if port_group['vlans'] is defined %} {{ port_group['vlans'] | join(" ")}}{% endif %} {% if port_group['service_groups'] is defined %}{% for local_service_group in port_group['service_groups'] %}{% for vlan_name in service_groups[local_service_group]['networks'] %} {{ vlan_name+underlay_id  if service_groups[local_service_group]['type'] =='underlay' else vlan_name }}{% endfor %}{% endfor %}{% endif %} ]
              }
