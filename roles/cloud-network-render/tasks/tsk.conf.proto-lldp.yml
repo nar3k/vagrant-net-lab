@@ -1,0 +1,10 @@
+- name: fabric_interfaces
+  blockinfile:
+    path: ./config/{{inventory_hostname}}.conf
+    marker: ""
+    block: |
+      {% if lldp_enabled %}
+      lldp {
+          interface all;
+      }
+      {% endif %}

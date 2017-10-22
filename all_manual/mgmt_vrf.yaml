@@ -1,3 +1,14 @@
+service_groups:
+  mgmt_underlay:
+    type: underlay
+    networks: ['un-mgmt-esxi','un-mgmt-vmotion','un-mgmt-vsan','un-mgmt-vtep']
+  svc-c:
+    type: service
+    networks: ['svc-c-dc-root','svc-c-dc-ast','svc-c-etc']
+  dmz:
+    type: service
+    networks: ['dmz-web01','dmz-app01','dmz-db01']
+
 network_db:
   un-mgmt-esxi01: { net: 172.16.8.0/27, vlan: 2000 }
   un-mgmt-esxi02: { net: 172.16.8.32/27, vlan: 2000 }
@@ -5,11 +16,18 @@ network_db:
   un-mgmt-vmotion02: { net: 172.16.9.32/27, vlan: 200 }
   un-mgmt-vsan01: { net: 172.16.10.0/27, vlan: 2002 }
   un-mgmt-vsan02: { net: 172.16.10.32/27, vlan: 2002 }
+  un-mgmt-vtep01: { net: 172.16.20.0/27, vlan: 2002 }
+  un-mgmt-vtep02: { net: 172.16.20.32/27, vlan: 2002 }
   vtep-mgmt01: { net: 172.16.11.0/27, vlan: 2003 }
   vtep-mgmt02: { net: 172.16.11.24/27, vlan: 2003 }
   stor-nfs01: {net: 172.16.13.0/24, vlan: 2004 }
   stor-nfs02: {net: 172.16.14.0/24, vlan: 2004 }
   dmz-web01: {net: 172.16.14.0/24, vlan: 2005 }
+  dmz-app01: {net: 172.16.15.0/24, vlan: 2006 }
+  dmz-db01: {net: 172.16.16.0/24, vlan: 2007 }
   i-leaf-exit01: {net: 172.16.100.0/30, vlan: 3000 }
   ospf-loopback01: {net: 10.255.0.0/24}
   ospf-loopback02: {net: 10.255.1.0/24}
+  svc-c-dc-root: { net: 172.21.0.0/29, vlan: 2900}
+  svc-c-dc-ast: { net: 172.21.0.8/29, vlan: 2901}
+  svc-c-etc: { net: 172.21.0.16/28, vlan: 2902}

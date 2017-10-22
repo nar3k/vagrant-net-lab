@@ -1,0 +1,35 @@
+
+- name: vlans of the config
+  blockinfile:
+   path: ./config/{{inventory_hostname}}.conf
+   marker: ""
+   block: |
+       {% if vlans is defined %}
+       vlans {
+       {% for vlan_group in vlans %}
+       {% if vlan_group['vlans'] is defined %}
+       {% for vlan_name in vlan_group['vlans'] %}
+         {{ vlan_name }} {
+            vlan-id {{ network_db[vlan_name]['vlan'] }};
+       {% if vlan_group.layer in ['layer3'] %}
+            l3-interface {{ vlanif_definition }}.{{ network_db[vlan_name]['vlan'] }};
+       {% endif %}
+          }
+       {% endfor %}
+       {% endif %}
+       {% if vlan_group['service_groups'] is defined %}
+       {% for local_service_group in vlan_group['service_groups'] %}
+       {% for vlan_name in service_groups[local_service_group]['networks'] %}
+       {% set vlan_name = vlan_name+underlay_id  if service_groups[local_service_group]['type'] == 'underlay' else vlan_name %}
+         {{ vlan_name }} {
+            vlan-id {{ network_db[vlan_name]['vlan'] }};
+       {% if vlan_group.layer in ['layer3'] %}
+            l3-interface {{ vlanif_definition }}.{{ network_db[vlan_name]['vlan'] }};
+       {% endif %}
+          }
+       {% endfor %}
+       {% endfor %}
+       {% endif %}
+       {% endfor %}
+         }
+       {% endif %}

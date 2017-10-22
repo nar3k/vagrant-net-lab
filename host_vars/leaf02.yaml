@@ -1,26 +1,20 @@
+underlay_id: '02'
 vlans:
- - layer: layer3
-   ip_number: 1
-   type: service
-   vlan_list:
-    - un-mgmt-esxi02
-    - un-mgmt-vmotion02
-    - un-mgmt-vsan02
-    - vtep-mgmt02
-    - stor-nfs02
- - layer: layer3
-   ip_number: 2
-   type: interconnect
-   vlan_list:
-    - i-leaf-exit01
-loopback_id: 4
-ports:
-  fabric_ports:
-    - xe-0/0/0
-    - xe-0/0/1
-  aggregated_ports:
-    ae01: ['xe-0/0/2','xe-0/0/3']
-  access_ports:
-   - vlan: i-leaf-exit01
-     ports:
-      - ae01
+  - layer: layer3
+    ip_number: 1
+    type: service
+    service_groups:
+     - mgmt_underlay
+
+unit_id: 3
+
+interconnects:
+  ae01: i-leaf-exit01
+aggregated_ports:
+  ae01: ['xe-0/0/2','xe-0/0/3']
+trunk_ports:
+  - service_groups:
+      - mgmt_underlay
+    ports:
+     - xe-0/0/2
+  - ports: ['ae01']

@@ -1,0 +1,10 @@
+- name: Get create config
+  hosts:
+    - leaf
+    - spine
+  connection: local
+  gather_facts: no
+  vars_files:
+   - ./all_manual/mgmt_vrf.yaml
+  roles:
+   - cloud-network-render

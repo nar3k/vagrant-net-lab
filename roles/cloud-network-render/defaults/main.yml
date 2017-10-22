@@ -1,7 +1,8 @@
+---
+# defaults file for cloud-fabric
 os: junos
 ospf_area: 0
-ospf_enabled: true
-lldp_enabled: true
 vlanif_definition: irb
 switchport_pattern: interface-mode
+oob_port_definition: em0
 password: ""

@@ -1,0 +1,30 @@
+
+
+- name: closing {{ current_block }}
+  blockinfile:
+    path: ./config/{{inventory_hostname}}.conf
+    marker: ""
+    block: |
+      policy-options {
+          policy-statement load-balancing-policy {
+              then {
+                  load-balance per-packet;
+              }
+          }
+
+      }
+      routing-options {
+          router-id {{ network_db['ospf-loopback01']['net'] | ipaddr(unit_id) | ipaddr('address')}};
+          forwarding-table {
+
+              export  load-balancing-policy;
+          }
+      }
+      chassis {
+        aggregated-devices {
+            ethernet {
+                device-count 200;
+            }
+        }
+
+      }

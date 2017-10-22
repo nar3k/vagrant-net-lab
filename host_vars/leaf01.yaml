@@ -1,21 +1,18 @@
+underlay_id: '01'
+
 vlans:
   - layer: layer3
     ip_number: 1
     type: service
-    vlan_list:
-     - un-mgmt-esxi01
-     - un-mgmt-vmotion01
-     - un-mgmt-vsan01
-     - vtep-mgmt01
-     - stor-nfs01
+    service_groups:
+     - mgmt_underlay
 
-loopback_id: 3
-ports:
-  fabric_ports:
-    - xe-0/0/0
-    - xe-0/0/1
-  access_ports:
-    - vlan: stor-nfs01
-      ports:
-       - xe-0/0/2
-    
+unit_id: 3
+fabric_ports:
+  - xe-0/0/0
+  - xe-0/0/1
+trunk_ports:
+  - service_groups:
+      - mgmt_underlay
+    ports:
+     - xe-0/0/2

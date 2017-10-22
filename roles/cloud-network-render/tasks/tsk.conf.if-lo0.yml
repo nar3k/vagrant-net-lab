@@ -1,0 +1,17 @@
+
+
+- name: loopback_interfaces
+  blockinfile:
+    path: ./config/{{inventory_hostname}}.conf
+    marker: ""
+    block: |
+      {% if ospf_enabled %}
+         lo0 {
+           unit 0 {
+             family inet {
+               address {{ network_db['ospf-loopback01']['net'] | ipaddr(unit_id) | ipaddr('address')}}/32;
+               address {{ network_db['ospf-loopback02']['net'] | ipaddr(unit_id) | ipaddr('address')}}/32;
+             }
+           }
+         }
+      {% endif %}

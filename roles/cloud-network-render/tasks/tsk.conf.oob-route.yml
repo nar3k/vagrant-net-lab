@@ -1,0 +1,19 @@
+
+
+- name: oob
+  blockinfile:
+    path: ./config/{{inventory_hostname}}.conf
+    marker: ""
+    block: |
+     routing-instances {
+        oob-mgmt {
+        instance-type virtual-router;
+        interface {{oob_port_definition}}.0;
+
+            routing-options {
+            static {
+                0.0.0.0/0 next-hop {{network_db['oob-net']['net'] | ipaddr(1) }};
+            }
+          }
+        }
+      }

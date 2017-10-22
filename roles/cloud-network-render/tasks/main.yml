@@ -1,0 +1,22 @@
+---
+# tasks file for cloud-fabric
+
+- name: 'delete files null files'
+  file: path=./config/{{inventory_hostname}}.conf state=absent
+- import_tasks: "./tsk.conf.start.yml"
+- import_tasks: ./tsk.conf.vlan.yml
+- set_fact: { current_block: interfaces }
+- import_tasks: ./tsk.conf.br-open.yml
+- import_tasks: ./tsk.conf.if-oob.yml
+- import_tasks: ./tsk.conf.if-vlanif.yml
+- import_tasks: ./tsk.conf.if-lo0.yml
+- import_tasks: ./tsk.conf.if-fabric.yml
+- import_tasks: ./tsk.conf.if-aggrports.yml
+- import_tasks: ./tsk.conf.if-switchports.yml
+- import_tasks: ./tsk.conf.br-close.yml
+- set_fact: { current_block: protocols }
+- import_tasks: ./tsk.conf.br-open.yml
+- import_tasks: ./tsk.conf.proto-lldp.yml
+- import_tasks: ./tsk.conf.proto-ospf.yml
+- import_tasks: ./tsk.conf.br-close.yml
+- import_tasks: ./tsk.conf.routing-etc.yml

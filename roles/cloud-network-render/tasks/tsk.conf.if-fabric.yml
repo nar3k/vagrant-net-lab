@@ -1,0 +1,22 @@
+
+
+- name: fabric_interfaces
+  blockinfile:
+    path: ./config/{{inventory_hostname}}.conf
+    marker: ""
+    block: |
+      {% if fabric_ports is defined %}
+       {% for port in fabric_ports %}
+         {{ port }} {
+               unit 0 {
+           family inet {
+            {% if loop.index % 2 != 0 %}
+             unnumbered-address lo0.0 preferred-source-address {{ network_db['ospf-loopback01']['net'] | ipaddr(unit_id) | ipaddr('address')}};
+            {% else %}
+            unnumbered-address lo0.0 preferred-source-address {{ network_db['ospf-loopback02']['net'] | ipaddr(unit_id) | ipaddr('address')}};
+            {% endif %}
+           }
+         }
+       }
+       {% endfor %}
+      {% endif %}
