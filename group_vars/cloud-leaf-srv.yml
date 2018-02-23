@@ -1,0 +1,41 @@
+vlans:
+  - layer: layer3
+    ip_number: 1
+    ospf_passive: true
+    service_groups:
+      - comp_underlay
+trunk_ports:
+ - service_groups: ['comp_underlay']
+   ports:
+    - xe-0/0/0
+    - xe-0/0/1
+    - xe-0/0/2
+    - xe-0/0/3
+    - xe-0/0/4
+    - xe-0/0/5
+    - xe-0/0/6
+    - xe-0/0/7
+    - xe-0/0/8
+    - xe-0/0/9
+    - xe-0/0/10
+    - xe-0/0/11
+    - xe-0/0/12
+    - xe-0/0/13
+    - xe-0/0/14
+    - xe-0/0/15
+    - xe-1/0/0
+    - xe-1/0/1
+    - xe-1/0/2
+    - xe-1/0/3
+    - xe-1/0/4
+    - xe-1/0/5
+    - xe-1/0/6
+    - xe-1/0/7
+    - xe-1/0/8
+    - xe-1/0/9
+    - xe-1/0/10
+    - xe-1/0/11
+    - xe-1/0/12
+    - xe-1/0/13
+    - xe-1/0/14
+    - xe-1/0/15

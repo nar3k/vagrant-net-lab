@@ -1,0 +1,18 @@
+esxi_disk: mpx.vmhba32:C0:T0:L0
+esxi_vmic: vmnic1
+nameservers:
+ - 192.168.201.10
+ - 192.168.201.11
+esxi_vlan: un-comp-esxi01
+vcenter_hostname: mgmt01vc01.ast01.mgmt.cloudttc.kz
+vcenter_username: nrk@ast01
+vcenter_password: Oak5F4ck1ng
+esxi_username: root
+esxi_password: P@ssw0rd1
+underlays:
+  - un-comp-esxi01
+  - un-comp-vmotion01
+  - un-comp-nfs01
+datacenter_name: AST01
+cluster_name: az03-lab-cluster01
+domain_name: ast01.mgmt.cloudttc.kz

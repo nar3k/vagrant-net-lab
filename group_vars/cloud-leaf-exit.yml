@@ -1,0 +1,28 @@
+vlans:
+  - layer: layer3
+    ip_number: 1
+    ospf_passive: true
+    service_groups:
+      - mgmt_underlay
+      - comp_underlay
+  - layer: layer3
+    ip_number: 2
+    vlans:
+     - i-mgmt-az01
+  - layer: layer2
+    service_groups:
+     - svc-c
+     - svc-mgmt
+    vlans:
+     - ha-mgmt-vc
+aggregated_ports:
+ ae10: ['xe-0/0/40','xe-0/0/41','xe-1/0/40','xe-1/0/41']
+ ae11: ['xe-0/0/42','xe-0/0/43','xe-1/0/42','xe-1/0/43']
+trunk_ports:
+ - ports: ['xe-0/0/0','xe-0/0/1','xe-0/0/2','xe-0/0/3','xe-1/0/0','xe-1/0/1','xe-1/0/2','xe-1/0/3']
+   service_groups: ['mgmt_underlay']
+ - ports: ['xe-0/0/9','xe-0/0/10','xe-0/0/11','xe-1/0/9','xe-1/0/10','xe-1/0/11']
+   service_groups: ['comp_underlay']
+ - ports: ['ae11']
+   service_groups: ['svc-c','svc-mgmt']
+   vlans: ['ha-mgmt-vc']

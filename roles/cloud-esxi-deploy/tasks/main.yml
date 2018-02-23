@@ -1,0 +1,120 @@
+---
+# tasks file for esxi-installer
+
+- name: install packages
+  yum:
+    name: "{{ packages }}"
+    state: present
+  delegate_to: dhcp-srv
+  run_once: true
+  tags: ['install']
+- name: clean dirs
+  file:
+   name: "{{ item}}"
+   state: absent
+  with_items:
+   - /var/lib/tftpboot/pxelinux.cfg
+   - /var/www/html
+  delegate_to: dhcp-srv
+  run_once: true
+  tags: ['always']
+- name: create dirs
+  file:
+   name: "{{ item}}"
+   mode: 755
+   state: directory
+  with_items:
+   - /var/lib/tftpboot/pxelinux.cfg
+   - /var/www/html
+  delegate_to: dhcp-srv
+  run_once: true
+  tags: ['always']
+- name: boot files
+  copy:
+   src: "{{ item }}"
+   dest: /var/lib/tftpboot/
+  with_items:
+   - menu.c32
+   - pxelinux.0
+  delegate_to: dhcp-srv
+  run_once: true
+  tags: ['install']
+- name: copy dhcp config
+  template:
+   src: dhcp.j2
+   dest: /etc/dhcp/dhcpd.conf
+  notify: restart dhcp
+  delegate_to: dhcp-srv
+  run_once: true
+  tags: ['install']
+- name: start services
+  service:
+   name: "{{ item }}"
+   state: started
+   enabled: true
+  with_items: "{{ services }}"
+  delegate_to: dhcp-srv
+  run_once: true
+  tags: ['always']
+- name: enable tftp
+  template:
+   src: tftp.j2
+   dest: /etc/xinetd.d/tftp
+  notify: restart tftp
+  delegate_to: dhcp-srv
+  run_once: true
+- name: create esxidir
+  file:
+   name: "/var/lib/tftpboot/{{ item.name }}"
+   state: directory
+  with_items: "{{ esxi_images }}"
+  delegate_to: dhcp-srv
+  run_once: true
+  tags: ['install']
+## move iso and copy to /var/lib/tftpboot/item.name
+- name: create boot-cfgs
+  template:
+   src: "{{ item.name }}/boot.cfg.j2"
+   dest: "/var/lib/tftpboot/images/{{ item.name }}/boot.cfg"
+  with_items: "{{ esxi_images }}"
+  delegate_to: dhcp-srv
+  run_once: true
+  tags: ['install']
+- name: copy pxememu
+  template:
+   src: pxemenu.j2
+   dest: "/var/lib/tftpboot/pxelinux.cfg/01-{{ mac_host_db[inventory_hostname] | regex_replace(':','-') | lower }}"
+   mode: 644
+  delegate_to: dhcp-srv
+  tags: ['always']
+- name: create kickstart-files
+  template:
+    src: ks.cfg.j2
+    dest: "/var/www/html/ks-{{ inventory_hostname }}.cfg"
+    mode: 644
+  delegate_to: dhcp-srv
+  when: mode not in ['static']
+  tags: ['always']
+- name: pausing for 5 minutes
+  pause:
+   minutes: 5
+  when: mode not in ['static']
+  tags: ['always']
+- name: copy static pxememu
+  template:
+   src: static.pxe.j2
+   dest: "/var/lib/tftpboot/pxelinux.cfg/01-{{ mac_host_db[inventory_hostname] | regex_replace(':','-') | lower }}"
+   mode: 644
+  delegate_to: dhcp-srv
+  when: mode not in ['static']
+  tags: ['always']
+- name: delete kickstart dir
+  file:
+   name: "{{ item}}"
+   state: absent
+  with_items:
+   - /var/www/html
+  delegate_to: dhcp-srv
+  run_once: true
+  when: mode not in ['static']
+  tags: ['always']

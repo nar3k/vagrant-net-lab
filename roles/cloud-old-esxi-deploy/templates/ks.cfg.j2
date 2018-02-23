@@ -1,0 +1,12 @@
+#
+# Sample scripted installation file
+#
+# Accept the VMware End User License Agreement
+vmaccepteula
+# Set the root password for the DCUI and Tech Support Mode
+rootpw P@ssw0rd1
+# The install media is in the CD-ROM drive
+{{ mode }} --disk={{ esxi_disk }}
+#network configuration
+network --bootproto=static --device={{ esxi_vnic }} --ip={{ ansible_host }} --gateway=192.168.201.1 --netmask=255.255.255.0 --nameserver={{ nameservers | join(',') }} --hostname={{ inventory_hostname }}.{{ domain_name }} --vlanid=2100
+reboot

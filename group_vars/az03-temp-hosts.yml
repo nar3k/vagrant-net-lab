@@ -1,0 +1,7 @@
+esxi_disk: mpx.vmhba32:C0:T0:L0
+esxi_vnic: vmnic1
+nameservers:
+ - 192.168.201.11
+ - 192.168.201.12
+esxi_vlan: un-comp-esxi01
+domain_name: ast01.mgmt.cloudttc.kz

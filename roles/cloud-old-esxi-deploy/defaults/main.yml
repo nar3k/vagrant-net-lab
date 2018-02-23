@@ -1,0 +1,13 @@
+---
+# defaults file for esxi-installer
+deploy_net: 10.10.80.0/24
+from: '10'
+to: '100'
+listen_interface: ens224
+nfs_directory: /exports/nfs
+esxi_images:
+ - name: ESXiv6.0
+ - name: ESXiv6.5d
+ - name: ESXiv6.5
+# static, install, upgrade
+mode: static

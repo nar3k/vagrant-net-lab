@@ -20,3 +20,4 @@
 - import_tasks: ./tsk.conf.proto-ospf.yml
 - import_tasks: ./tsk.conf.br-close.yml
 - import_tasks: ./tsk.conf.routing-etc.yml
+- import_tasks: ./tsk.conf.oob-route.yml

@@ -1,9 +1,125 @@
-vlan_db:
-  un-mgmt-esxi: 2000
-  un-mgmt-vmotion: 2001
-  un-mgmt-vsan: 2003
-  svc-web-dmz: 2500
-  vtep-mgmt01: 2004
-  vtep-comp01: 2011
-  stor-nfs01: 2010
-  stor-nfs02: 2010
+service_groups:
+  mgmt_underlay:
+    type: underlay
+    networks: ['un-mgmt-esxi','un-mgmt-vmotion','un-mgmt-vsan','un-mgmt-vtep']
+  comp_underlay:
+    type: underlay
+    networks: ['un-comp-esxi','un-comp-vmotion','un-comp-nfs','un-comp-vtep']
+  bkp_underlay:
+    type: underlay
+    networks: ['un-bkp-esxi','un-bkp-vmotion','un-bkp-nfs']
+  svc-c:
+    type: service
+    networks: ['svc-c-dc-root','svc-c-dc-ast','svc-c-etc']
+  svc-mgmt:
+    type: service
+    networks: ['svc-mgmt-vc','svc-mgmt-mon','svc-mgmt-log','svc-mgmt-dep']
+  svc-comp-int:
+    type: service
+    networks: ['svc-comp-int-vc01','svc-comp-int-app01','svc-comp-int-db01']
+  svc-comp-dmz:
+    type: service
+    networks: ['svc-comp-dmz-vcd01','svc-comp-dmz-bk01','svc-comp-db-db01']
+  oob:
+    type: service
+    networks: ['oob-stor','oob-net','oob-srv-ipmi','oob-srv-pxe']
+  i-nsxe:
+    type: service
+    networks: ['i-nsxe-int','i-nsxe-dmz']
+network_db:
+  #mgmt cluster networks
+  un-mgmt-esxi: { vlan: 2000 }
+  un-comp-esxi: { vlan: 2010 }
+  un-mgmt-esxi01: { net: 10.10.8.0/27, vlan: 2000 }
+  un-mgmt-esxi02: { net: 10.10.8.32/27, vlan: 2000 }
+  un-mgmt-vmotion01: { net: 10.10.20.0/27, vlan: 2001 }
+  un-mgmt-vmotion02: { net: 10.10.20.33/27, vlan: 2001 }
+  un-mgmt-vsan01: { net: 10.10.107.0/27, vlan: 2002 }
+  un-mgmt-vsan02: { net: 10.10.107.33/27, vlan: 2002 }
+  un-mgmt-vtep01: { net: 10.10.83.0/27, vlan: 2003 }
+  un-mgmt-vtep02: { net: 10.10.83.33/27, vlan: 2003 }
+  #compute cluster networks
+  un-comp-esxi01: { net: 10.10.10.0/27, vlan: 2010 }
+  un-comp-esxi02: { net: 10.10.10.32/27, vlan: 2010 }
+  un-comp-esxi03: { net: 10.10.10.64/27, vlan: 2010 }
+  un-comp-esxi04: { net: 10.10.10.96/27, vlan: 2010 }
+  un-comp-esxi05: { net: 10.10.10.128/27, vlan: 2010 }
+  un-comp-esxi06: { net: 10.10.10.160/27, vlan: 2010 }
+  un-comp-esxi07: { net: 10.10.10.192/27, vlan: 2010 }
+  un-comp-esxi08: { net: 10.10.10.224/27, vlan: 2010 }
+
+  un-comp-vmotion01: { net: 10.10.22.0/27, vlan: 2011 }
+  un-comp-vmotion02: { net: 10.10.22.32/27, vlan: 2011 }
+  un-comp-vmotion03: { net: 10.10.22.64/27, vlan: 2011 }
+  un-comp-vmotion04: { net: 10.10.22.96/27, vlan: 2011 }
+  un-comp-vmotion05: { net: 10.10.22.128/27, vlan: 2011 }
+  un-comp-vmotion06: { net: 10.10.22.160/27, vlan: 2011 }
+  un-comp-vmotion07: { net: 10.10.22.192/27, vlan: 2011 }
+  un-comp-vmotion08: { net: 10.10.22.224/27, vlan: 2011 }
+
+  un-comp-nfs01: { net: 10.10.33.0/27, vlan: 2012 }
+  un-comp-nfs02: { net: 10.10.33.32/27, vlan: 2012 }
+  un-comp-nfs03: { net: 10.10.33.64/27, vlan: 2012 }
+  un-comp-nfs04: { net: 10.10.33.96/27, vlan: 2012 }
+  un-comp-nfs05: { net: 10.10.33.128/27, vlan: 2012 }
+  un-comp-nfs06: { net: 10.10.33.160/27, vlan: 2012 }
+  un-comp-nfs07: { net: 10.10.33.192/27, vlan: 2012 }
+  un-comp-nfs08: { net: 10.10.33.224/27, vlan: 2012 }
+
+  un-comp-vtep01: { net: 10.10.84.0/27, vlan: 2013 }
+  un-comp-vtep02: { net: 10.10.84.32/27, vlan: 2013 }
+  un-comp-vtep03: { net: 10.10.84.64/27, vlan: 2013 }
+  un-comp-vtep04: { net: 10.10.84.96/27, vlan: 2013 }
+  un-comp-vtep05: { net: 10.10.84.128/27, vlan: 2013 }
+  un-comp-vtep06: { net: 10.10.84.160/27, vlan: 2013 }
+  un-comp-vtep07: { net: 10.10.84.192/27, vlan: 2013 }
+  un-comp-vtep08: { net: 10.10.84.224/27, vlan: 2013 }
+  #backup networks
+  un-bkp-esxi01: { net: 10.10.11.0/27, vlan: 2020 }
+  un-bkp-esxi02: { net: 10.10.11.32/27, vlan: 2020 }
+  un-bkp-vmotion01: { net: 10.10.23.0/27, vlan: 2021 }
+  un-bkp-vmotion02: { net: 10.10.23.32/27, vlan: 2021 }
+  un-bkp-nfs01: { net: 10.10.34.0/27, vlan: 2022 }
+  un-bkp-nfs02: { net: 10.10.34.32/27, vlan: 2022 }
+  bkp-proxy01: { net: 10.10.108.0/27, vlan: 2022 }
+  bkp-data01: { net: 10.10.29.0/27, vlan: 2023 }
+  #storage service networks
+  stor-nfs01: { net: 10.10.32.0/25, vlan: 2032 }
+  stor-nfs02: { net: 10.10.32.128/25,vlan: 2032 }
+  stor-bkp01: { net: 10.10.28.0/24, vlan: 2031 }
+  #service neworks
+  svc-c-dc-root: { net: 10.10.0.0/29, vlan: 2700}
+  svc-c-dc-ast: { net: 10.10.0.8/29, vlan: 2701}
+  svc-c-etc: { net: 10.10.0.16/28, vlan: 2702}
+  svc-mgmt-vc: { net: 10.10.0.32/28, vlan: 2703}
+  svc-mgmt-mon: { net: 10.10.0.48/28, vlan: 2704}
+  svc-mgmt-log: { net: 10.10.0.64/27, vlan: 2705}
+  svc-mgmt-dep: { net: 10.10.0.128/28, vlan: 2706}
+  svc-mgmt-ntop: { net: 10.10.0.176/28, vlan: 2707}
+
+  svc-comp-int-vc01: { net: 10.10.0.144/28, vxlan: 20001}
+  svc-comp-int-app01: { net: 10.10.0.160/28, vxlan: 20002}
+  svc-comp-int-db01: { net: 10.10.0.240/28, vxlan: 20003}
+  svc-comp-dmz-vcd01: { net: 10.10.248.0/28, vxlan: 20004}
+  svc-comp-dmz-bk01: { net: 10.10.248.16/28, vxlan: 20005}
+  svc-comp-dmz-db01: { net: 10.10.248.240/28, vxlan: 20006}
+  oob-stor: { net: 10.10.50.0/24, vlan: 1000}
+  oob-net: { net: 10.10.60.0/24, vlan: 1001}
+  oob-srv-ipmi: { net: 10.10.70.0/24, vlan: 1002}
+  oob-srv-pxe: { net: 10.10.80.0/24, vlan: 1003}
+  internet-mgmt01: { net: 91.185.26.128/27, vlan 1501}
+  internet-comp01: { net: 37.208.43.0/24, vlan 1501}
+  #interconnects
+  i-mgmt-az01: { net: 172.16.0.0/30 , vlan: 3100}
+  i-mgmt-az02: { net: 172.16.0.4/30 , vlan: 3101}
+  i-mgmt-edge: { net: 172.16.0.8/29, vlan: 3102}
+  i-cloud-lan: { net: 172.16.0.16/29, vlan: 3103}
+  i-bkp-az01: { net: 172.16.0.24/30, vlan: 3104}
+  i-bkp-az02: { net: 172.16.0.28/30, vlan: 3105}
+  i-nsxe-int: { net: 172.16.255.0/29,vlan: 3200}
+  i-nsxe-dmz: { net: 172.16.255.8/28,vlan: 3201}
+  i-dlr-nsxe-int: { net: 172.16.255.16/29,vxlan: 10000}
+  i-dlr-nsxe-dmz: { net: 172.16.255.24/28,vxlan: 10001}
+  ha-mgmt-vc: { vlan: 3300}
+  ospf-loopback01: {net: 10.10.228.0/24}
+  ospf-loopback02: {net: 10.10.229.0/24}

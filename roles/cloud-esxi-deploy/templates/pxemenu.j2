@@ -1,0 +1,16 @@
+DEFAULT menu.c32
+MENU TITLE VMWware ESXi Installer Boot Menu
+NOHALT 1
+PROMPT 0
+TIMEOUT 80
+{% if mode in ['install','upgrade'] %}
+{% for image in esxi_images %}
+LABEL Install {{ image.name }}
+KERNEL /images/{{ image.name }}/mboot.c32
+APPEND -c /images/{{ image.name}}/boot.cfg ks=http://{{ deploy_net | ipaddr('1') | ipaddr('address') }}/ks-{{ inventory_hostname }}.cfg
+MENU LABEL {{ image.name}}  ^Installer
+{% endfor %}
+{% endif %}
+LABEL hddboot
+LOCALBOOT 0x80
+MENU LABEL ^Boot from local disk

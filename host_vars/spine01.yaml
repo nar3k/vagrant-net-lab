@@ -1,4 +1,0 @@
-unit_id: 1
-fabric_ports:
-  - xe-0/0/0
-  - xe-0/0/1

@@ -1,7 +1,0 @@
-os: junos
-ospf_area: 0
-ospf_enabled: true
-lldp_enabled: true
-vlanif_definition: irb
-switchport_pattern: interface-mode
-password: ""

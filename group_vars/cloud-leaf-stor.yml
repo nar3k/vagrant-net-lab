@@ -1,0 +1,18 @@
+vlans:
+  - layer: layer3
+    ip_number: 1
+    ospf_passive: true
+    vlans:
+      - stor-nfs01
+    service_groups:
+      - bkp_underlay
+  - layer: layer3
+    ip_number: 1
+    vlan_list:
+     - i-bkp-az1
+aggregated_ports:
+  ae10: ['xe-0/0/42','xe-0/0/43','xe-1/0/42','xe-1/0/43']
+trunk_ports:
+  - ports: ['ae10']
+  - ports: ['xe-0/0/0','xe-1/0/0']
+    service_groups: ['bkp_underlay']

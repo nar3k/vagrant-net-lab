@@ -1,0 +1,12 @@
+ospf_enabled: false
+vlanif_definition: vlan
+switchport_pattern: port-mode
+vlans:
+  - layer: layer2
+    service_groups:
+     - oob
+aggregated_ports:
+  ae01: ['xe-0/2/0','xe-0/2/1']
+trunk_ports:
+ - service_groups: ['oob']
+   ports: ['ae01']

@@ -1,0 +1,64 @@
+vlans:
+  - layer: layer3
+    ip_number: 1
+    ospf_passive: true
+    service_groups:
+     - svc-mgmt
+     - oob
+  - layer: layer3
+    ip_number: 1
+    vlan_list:
+     - i-mgmt-az01
+     - i-mgmt-az02
+  - layer: layer3
+    ip_number: 2
+    vlan_list:
+      - i-mgmt-edge
+  - layer: layer2
+    vlans:
+      - ha-mgmt-vc
+    service_groups:
+      - svc-c
+      - i-nsxe
+interconnects:
+ ae30: i-mgmt-edge
+ ae31: i-mgmt-edge
+ ae32: i-mgmt-az01
+ ae33: i-mgmt-az02
+aggregated_ports:
+ ae01: ['xe-0/0/0','xe-1/0/0']
+ ae02: ['xe-0/0/1','xe-1/0/1']
+ ae03: ['xe-0/0/2','xe-1/0/2']
+ ae04: ['xe-0/0/3','xe-1/0/3']
+ ae05: ['xe-0/0/4','xe-1/0/4']
+ ae06: ['xe-0/0/5','xe-1/0/5']
+ ae07: ['xe-0/0/6','xe-1/0/6']
+ ae08: ['xe-0/0/7','xe-1/0/7']
+ ae09: ['xe-0/0/8','xe-1/0/8']
+ ae10: ['xe-0/0/9','xe-1/0/9']
+ ae11: ['xe-0/0/10','xe-1/0/10']
+ ae12: ['xe-0/0/11','xe-1/0/11']
+ ae13: ['xe-0/0/12','xe-1/0/12']
+ ae14: ['xe-0/0/13','xe-1/0/13']
+ ae15: ['xe-0/0/14','xe-1/0/14']
+ ae16: ['xe-0/0/15','xe-1/0/15']
+ ae17: ['xe-0/0/16','xe-1/0/16']
+ ae18: ['xe-0/0/17','xe-1/0/17']
+ ae19: ['xe-0/0/18','xe-1/0/18']
+ ae20: ['xe-0/0/19','xe-1/0/19']
+ ae21: ['xe-0/0/20','xe-1/0/20']
+ ae22: ['xe-0/0/21','xe-1/0/21']
+ ae23: ['xe-0/0/20','xe-1/0/20']
+ ae24: ['xe-0/0/21','xe-1/0/21']
+ ae30: ['xe-0/0/22','xe-1/0/22']
+ ae31: ['xe-0/0/23','xe-1/0/23']
+ ae32: ['xe-0/0/23','xe-1/0/23','xe-0/0/24','xe-1/0/24']
+ ae33: ['xe-0/0/25','xe-1/0/25','xe-0/0/26','xe-1/0/26']
+trunk_ports:
+ - service_groups: ['oob']
+   ports: ['ae01','ae02','ae03','ae04','ae05','ae06','ae07','ae08','ae09','ae10','ae11','ae12','ae13','ae14','ae15','ae16','ae17','ae18','ae19','ae20','ae21','ae22']
+ - service_groups: ['i-nsxe','svc-c']
+   ports: ['ae30','ae31']
+ - service_groups: ['svc-c','svc-mgmt','i-nsxe']
+   vlans: ['ha-mgmt-vc']
+   ports: ['ae32','ae33']

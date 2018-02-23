@@ -1,0 +1,19 @@
+#
+# ISC DHCP server configuration file snippet.  This is not a complete
+# configuration file; see the ISC server documentation for details on
+# how to configure the DHCP server.
+#
+allow booting;
+DHCPDARGS="{{ listen_interface }}";
+allow bootp;
+option client-system-arch code 93 = unsigned integer 16;
+class "pxeclients" {
+   match if substring(option vendor-class-identifier, 0, 9) = "PXEClient";
+   next-server {{ ansible_host }};
+
+      filename = "pxelinux.0";
+}
+
+subnet {{ deploy_net | ipaddr('network')}} netmask {{ deploy_net | ipaddr('netmask')}} {
+ range {{ deploy_net | ipaddr(from) | ipaddr('address') }}  {{ deploy_net | ipaddr(to) | ipaddr('address') }};
+}

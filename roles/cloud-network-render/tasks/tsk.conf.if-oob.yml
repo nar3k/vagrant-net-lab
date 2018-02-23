@@ -1,19 +1,14 @@
+
+
 - name: closing {{ current_block }}
   blockinfile:
     path: ./config/{{inventory_hostname}}.conf
     marker: ""
     block: |
-      em0 {
+      {{ oob_port_definition }} {
           unit 0 {
               family inet {
-                  dhcp;
+                  address {{network_db['oob-net']['net'] | ipaddr(unit_id) }};
               }
           }
       }
-      em1 {
-          unit 0 {
-              family inet {
-                  address 169.254.0.2/24;
-              }
-          }
-       }

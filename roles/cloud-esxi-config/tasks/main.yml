@@ -1,0 +1,119 @@
+---
+# tasks file for cloud-esxi-config
+
+- name: Create Cluster
+  vmware_cluster:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    datacenter_name: "{{ datacenter_name }}"
+    cluster_name: "{{ cluster_name }}"
+    enable_ha: yes
+    enable_drs: yes
+    enable_vsan: no
+    state: present
+    validate_certs: False
+  delegate_to: localhost
+  run_once: true
+  tags: ['install']
+- name: Add ESXi Host to vCenter
+  vmware_host:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    datacenter_name: "{{ datacenter_name }}"
+    cluster_name: "{{ cluster_name }}"
+    esxi_hostname: '{{ inventory_hostname }}.{{ domain_name }}'
+    esxi_username: '{{ esxi_username }}'
+    esxi_password: '{{ esxi_password }}'
+    state: present
+    validate_certs: False
+  delegate_to: localhost
+  tags: ['install']
+- name: Add Management Network VM Portgroup
+  vmware_portgroup:
+    hostname: '{{ inventory_hostname }}'
+    username: '{{ esxi_username }}'
+    password: '{{ esxi_password }}'
+    switch_name: vSwitch0
+    portgroup_name: "{{ item }}"
+    vlan_id: "{{ network_db[item]['vlan']}}"
+    validate_certs: False
+  delegate_to: localhost
+  with_items: "{{ underlays }}"
+  tags: ['network']
+- name: Create dvswitch
+  vmware_dvswitch:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    datacenter_name:  "{{ datacenter_name }}"
+    switch_name: "vDS-{{ cluster_name }}"
+    mtu: 9000
+    uplink_quantity: 2
+    discovery_proto: lldp
+    discovery_operation: both
+    state: present
+    validate_certs: False
+  run_once: true
+  delegate_to: localhost
+  tags: ['install']
+- name: Create Management portgroup
+  vmware_dvs_portgroup:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    portgroup_name: "vDS-{{ item }}"
+    switch_name: "vDS-{{ cluster_name }}"
+    vlan_id: "{{ network_db[item]['vlan']}}"
+    num_ports: 120
+    portgroup_type: earlyBinding
+    state: present
+    validate_certs: False
+  delegate_to: localhost
+  with_items: "{{ underlays }}"
+  tags: ['network']
+- name: Add Management vmkernel port (vmk1)
+  vmware_vmkernel:
+    hostname: "{{ inventory_hostname }}"
+    username: "{{ esxi_username }}"
+    password: "{{ esxi_password }}"
+    vswitch_name: vSwitch0
+    portgroup_name: "{{ item }}"
+    vlan_id: "{{ network_db[item]['vlan']}}"
+    ip_address: "{{ item | ipaddr(rack_id) | ipaddr('address')}}"
+    subnet_mask: "{{ item | ipaddr('netmask')}}"
+    enable_vmotion: "{{ True if vmotion in item else False }}"
+    enable_mgmt: False
+    enable_vsan: False
+    mtu: 9000
+    validate_certs: False
+  delegate_to: localhost
+  with_items: "{{ underlays }}"
+  tags: ['network']
+- name: Add Host to dVS
+  vmware_dvs_host:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    esxi_hostname: "{{ inventory_hostname }}.{{ domain_name }}"
+    switch_name: "vDS-{{ cluster_name }}"
+    vmnics: "{{ vnics }}"
+    state: present
+  delegate_to: localhost
+  tags: ['network']
+- name: Migrate Management vmk
+  vmware_migrate_vmk:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    esxi_hostname: "{{ ansible_ssh_host }}"
+    device: "vmk{{item.0}}"
+    current_switch_name: vSwitch0
+    current_portgroup_name: "{{ item.1 if item.0 != 0 else 'Management Network'}}"
+    migrate_switch_name: "vDS-{{ cluster_name }}"
+    migrate_portgroup_name: "vDS-{{ item.1 }}"
+    validate_certs: False
+  delegate_to: localhost
+  with_indexed_items: "{{ underlay for underlay in underlays if 'vtep' not in underlay }}"
+  tags: ['network']

@@ -1,0 +1,327 @@
+[deploy-server]
+dhcp-srv ansible_host=192.168.201.196 ansible_user=root ansible_ssh_pass=649f7e88
+
+
+[az03-lab-cluster01]
+cloud-comp-srv01 ansible_host=10.10.10.2 rack_id=2
+cloud-comp-srv02 ansible_host=10.10.10.3 rack_id=3
+cloud-comp-srv03 ansible_host=10.10.10.4 rack_id=4
+
+[az03-temp-hosts]
+mgmt01esx01 ansible_host=192.168.201.31 rack_id=5
+mgmt01esx02 ansible_host=192.168.201.32 rack_id=6
+mgmt01esx03 ansible_host=192.168.201.33 rack_id=6
+comp01esx10 ansible_host=192.168.201.34 rack_id=5
+comp01esx11 ansible_host=192.168.201.35 rack_id=6
+comp01esx12 ansible_host=192.168.201.36 rack_id=6
+comp01esx13 ansible_host=192.168.201.37 rack_id=6
+comp01esx14 ansible_host=192.168.201.38 rack_id=6
+
+
+[cloud-mgmt-cluster01]
+cloud-mgmt-srv01 ansible_host=10.10.8.2 unit_id=2
+cloud-mgmt-srv02 ansible_host=10.10.8.3 unit_id=3
+cloud-mgmt-srv03 ansible_host=10.10.8.4 unit_id=4
+cloud-mgmt-srv04 ansible_host=10.10.8.34 unit_id=34
+cloud-mgmt-srv05 ansible_host=10.10.8.35 unit_id=35
+cloud-mgmt-srv06 ansible_host=10.10.8.36 unit_id=36
+
+[cloud-edge-cluster01]
+cloud-edge-srv01 ansible_host=10.10.10.2 unit_id=2
+cloud-edge-srv02 ansible_host=10.10.10.3 unit_id=3
+cloud-edge-srv03 ansible_host=10.10.10.4 unit_id=4
+cloud-edge-srv04 ansible_host=10.10.10.34 unit_id=34
+cloud-edge-srv05 ansible_host=10.10.10.35 unit_id=35
+cloud-edge-srv06 ansible_host=10.10.10.36 unit_id=36
+
+[az01-gen-cluster01]
+cloud-comp-gen-srv01 ansible_host=10.10.10.66 unit_id=66
+cloud-comp-gen-srv02 ansible_host=10.10.10.67 unit_id=67
+cloud-comp-gen-srv03 ansible_host=10.10.10.68 unit_id=68
+cloud-comp-gen-srv04 ansible_host=10.10.10.69 unit_id=69
+cloud-comp-gen-srv05 ansible_host=10.10.10.70 unit_id=70
+cloud-comp-gen-srv06 ansible_host=10.10.10.71 unit_id=71
+cloud-comp-gen-srv07 ansible_host=10.10.10.72 unit_id=72
+cloud-comp-gen-srv08 ansible_host=10.10.10.73 unit_id=73
+cloud-comp-gen-srv09 ansible_host=10.10.10.74 unit_id=74
+cloud-comp-gen-srv10 ansible_host=10.10.10.75 unit_id=75
+
+[az01-hm-cluster01]
+cloud-comp-hm-srv01 ansible_host=10.10.10.76 unit_id=76
+cloud-comp-hm-srv02 ansible_host=10.10.10.77 unit_id=77
+cloud-comp-hm-srv03 ansible_host=10.10.10.78 unit_id=78
+
+[az01-gen-cluster02]
+cloud-comp-gen-srv11 ansible_host=10.10.10.130 unit_id=130
+cloud-comp-gen-srv12 ansible_host=10.10.10.131 unit_id=131
+cloud-comp-gen-srv13 ansible_host=10.10.10.132 unit_id=132
+cloud-comp-gen-srv14 ansible_host=10.10.10.133 unit_id=133
+cloud-comp-gen-srv15 ansible_host=10.10.10.134 unit_id=134
+cloud-comp-gen-srv16 ansible_host=10.10.10.140 unit_id=140
+cloud-comp-gen-srv17 ansible_host=10.10.10.141 unit_id=141
+cloud-comp-gen-srv18 ansible_host=10.10.10.142 unit_id=142
+cloud-comp-gen-srv19 ansible_host=10.10.10.143 unit_id=143
+cloud-comp-gen-srv20 ansible_host=10.10.10.144 unit_id=144
+
+[az01-hm-cluster02]
+cloud-comp-hm-srv04 ansible_host=10.10.10.145 unit_id=145
+cloud-comp-hm-srv05 ansible_host=10.10.10.146 unit_id=146
+cloud-comp-hm-srv06 ansible_host=10.10.10.147 unit_id=147
+
+[az01-gen-cluster03]
+cloud-comp-gen-srv21 ansible_host=10.10.10.198 unit_id=198
+cloud-comp-gen-srv22 ansible_host=10.10.10.199 unit_id=199
+cloud-comp-gen-srv23 ansible_host=10.10.10.200 unit_id=200
+cloud-comp-gen-srv24 ansible_host=10.10.10.201 unit_id=201
+cloud-comp-gen-srv25 ansible_host=10.10.10.202 unit_id=202
+cloud-comp-gen-srv26 ansible_host=10.10.10.203 unit_id=203
+cloud-comp-gen-srv27 ansible_host=10.10.10.204 unit_id=204
+cloud-comp-gen-srv28 ansible_host=10.10.10.205 unit_id=205
+cloud-comp-gen-srv29 ansible_host=10.10.10.206 unit_id=206
+cloud-comp-gen-srv30 ansible_host=10.10.10.207 unit_id=207
+
+[az01-hm-cluster03]
+cloud-comp-hm-srv07 ansible_host=10.10.10.208 unit_id=208
+cloud-comp-hm-srv08 ansible_host=10.10.10.209 unit_id=209
+cloud-comp-hm-srv09 ansible_host=10.10.10.210 unit_id=210
+
+
+[az02-gen-cluster01]
+cloud-comp-gen-srv31 ansible_host=10.10.10.97 unit_id=97
+cloud-comp-gen-srv32 ansible_host=10.10.10.98 unit_id=98
+cloud-comp-gen-srv33 ansible_host=10.10.10.99 unit_id=99
+cloud-comp-gen-srv34 ansible_host=10.10.10.100 unit_id=100
+cloud-comp-gen-srv35 ansible_host=10.10.10.101 unit_id=101
+cloud-comp-gen-srv36 ansible_host=10.10.10.102 unit_id=102
+cloud-comp-gen-srv37 ansible_host=10.10.10.103 unit_id=103
+cloud-comp-gen-srv38 ansible_host=10.10.10.104 unit_id=104
+cloud-comp-gen-srv39 ansible_host=10.10.10.105 unit_id=105
+cloud-comp-gen-srv40 ansible_host=10.10.10.106 unit_id=106
+
+[az02-hm-cluster01]
+cloud-comp-hm-srv10 ansible_host=10.10.10.107 unit_id=107
+cloud-comp-hm-srv11 ansible_host=10.10.10.108 unit_id=108
+cloud-comp-hm-srv12 ansible_host=10.10.10.109 unit_id=109
+
+[az02-gen-cluster02]
+cloud-comp-gen-srv41 ansible_host=10.10.10.162 unit_id=162
+cloud-comp-gen-srv42 ansible_host=10.10.10.163 unit_id=163
+cloud-comp-gen-srv43 ansible_host=10.10.10.164 unit_id=164
+cloud-comp-gen-srv44 ansible_host=10.10.10.165 unit_id=165
+cloud-comp-gen-srv45 ansible_host=10.10.10.166 unit_id=166
+cloud-comp-gen-srv46 ansible_host=10.10.10.167 unit_id=167
+cloud-comp-gen-srv47 ansible_host=10.10.10.168 unit_id=168
+cloud-comp-gen-srv48 ansible_host=10.10.10.169 unit_id=169
+cloud-comp-gen-srv49 ansible_host=10.10.10.170 unit_id=170
+cloud-comp-gen-srv50 ansible_host=10.10.10.171 unit_id=171
+
+[az02-hm-cluster02]
+cloud-comp-hm-srv13 ansible_host=10.10.10.172 unit_id=172
+cloud-comp-hm-srv14 ansible_host=10.10.10.173 unit_id=173
+cloud-comp-hm-srv15 ansible_host=10.10.10.174 unit_id=174
+
+[az02-gen-cluster03]
+cloud-comp-gen-srv51 ansible_host=10.10.10.226 unit_id=226
+cloud-comp-gen-srv52 ansible_host=10.10.10.227 unit_id=227
+cloud-comp-gen-srv53 ansible_host=10.10.10.228 unit_id=228
+cloud-comp-gen-srv54 ansible_host=10.10.10.229 unit_id=229
+cloud-comp-gen-srv55 ansible_host=10.10.10.230 unit_id=230
+cloud-comp-gen-srv56 ansible_host=10.10.10.231 unit_id=231
+cloud-comp-gen-srv57 ansible_host=10.10.10.232 unit_id=232
+cloud-comp-gen-srv58 ansible_host=10.10.10.233 unit_id=233
+cloud-comp-gen-srv59 ansible_host=10.10.10.234 unit_id=234
+cloud-comp-gen-srv60 ansible_host=10.10.10.235 unit_id=235
+
+[az02-hm-cluster03]
+cloud-comp-hm-srv13 ansible_host=10.10.10.236 unit_id=236
+cloud-comp-hm-srv14 ansible_host=10.10.10.237 unit_id=237
+cloud-comp-hm-srv15 ansible_host=10.10.10.238 unit_id=238
+
+
+[ntop-ast01]
+ntop01ast.ast01.cloudttc.kz ansible_host=10.10.10.241 unit_id=241
+
+[cloud-gen-clusters:children]
+az01-gen-cluster01
+az01-gen-cluster02
+az01-gen-cluster03
+az02-gen-cluster01
+az02-gen-cluster02
+az02-gen-cluster03
+
+[cloud-hm-clusters:children]
+az01-hm-cluster01
+az01-hm-cluster02
+az01-hm-cluster03
+az02-hm-cluster01
+az02-hm-cluster02
+az02-hm-cluster03
+
+
+
+[cloud-leaf-sw]
+cloud-leaf-sw01 ansible_host=10.10.60.12 unit_id=2
+cloud-leaf-sw02 ansible_host=10.10.60.13 unit_id=3
+cloud-leaf-sw03 ansible_host=10.10.60.14 unit_id=4
+cloud-leaf-sw04 ansible_host=10.10.60.15 unit_id=5
+cloud-leaf-sw05 ansible_host=10.10.60.16 unit_id=6
+cloud-leaf-sw06 ansible_host=10.10.60.17 unit_id=7
+cloud-leaf-sw07 ansible_host=10.10.60.18 unit_id=8
+cloud-leaf-sw08 ansible_host=10.10.60.19 unit_id=9
+cloud-leaf-sw09 ansible_host=10.10.60.110 unit_id=10
+cloud-leaf-sw10 ansible_host=10.10.60.111 unit_id=11
+
+[cloud-leaf-srv]
+cloud-leaf-sw03
+cloud-leaf-sw04
+cloud-leaf-sw05
+cloud-leaf-sw08
+cloud-leaf-sw09
+cloud-leaf-sw10
+
+[cloud-leaf-stor]
+cloud-leaf-sw02
+cloud-leaf-sw07
+
+[cloud-leaf-exit]
+cloud-leaf-sw01
+cloud-leaf-sw06
+
+[cloud-spine-sw]
+cloud-spine-sw01 ansible_host=10.10.60.112 unit_id=12
+cloud-spine-sw02 ansible_host=10.10.60.113 unit_id=13
+cloud-spine-sw03 ansible_host=10.10.60.114 unit_id=14
+cloud-spine-sw04 ansible_host=10.10.60.115 unit_id=15
+
+[cloud-fabric:children]
+cloud-leaf-sw
+cloud-spine-sw
+
+[cloud-store-sw]
+cloud-stor-sw01 ansible_host=10.10.60.121 unit_id=21
+cloud-stor-sw02 ansible_host=10.10.60.122 unit_id=22
+
+
+
+[cloud-edge-r]
+cloud-edge-rt01 ansible_host=10.10.60.116 unit_id=16
+cloud-edge-rt02 ansible_host=10.10.60.117 unit_id=17
+[cloud-edge-fw]
+cloud-edge-fw01 ansible_host=10.10.60.118 unit_id=18
+cloud-edge-fw02 ansible_host=10.10.60.119 unit_id=19
+[cloud-edge-sw]
+cloud-edge-sw01 ansible_host=10.10.60.120 unit_id=20
+
+[cloud-edge-adc]
+cloud-edge-adc01 ansible_host=10.10.60.165 unit_id=65
+cloud-edge-adc02 ansible_host=10.10.60.166 unit_id=66
+
+[cloud-edge:children]
+cloud-edge-r
+cloud-edge-fw
+cloud-edge-sw
+cloud-edge-adc
+
+[cloud:children]
+cloud-fabric
+cloud-edge
+cloud-store-sw
+
+[col-edge-r]
+col-edge-rt01 ansible_host=10.10.60.123 unit_id=23
+col-edge-rt02 ansible_host=10.10.60.124 unit_id=24
+[col-edge-fw]
+col-edge-fw01 ansible_host=10.10.60.125 unit_id=25
+col-edge-fw02 ansible_host=10.10.60.126 unit_id=26
+[col-edge-sw]
+col-edge-sw01 ansible_host=10.10.60.127 unit_id=27
+[col-ac-sw]
+col-ac-sw01 ansible_host=10.10.60.128 unit_id=28
+col-ac-sw02 ansible_host=10.10.60.129 unit_id=29
+col-ac-sw03 ansible_host=10.10.60.130 unit_id=30
+col-ac-sw04 ansible_host=10.10.60.131 unit_id=31
+col-ac-sw05 ansible_host=10.10.60.132 unit_id=32
+col-ac-sw06 ansible_host=10.10.60.133 unit_id=33
+col-ac-sw07 ansible_host=10.10.60.134 unit_id=34
+[col-ag-sw]
+col-ag-sw01 ansible_host=10.10.60.135 unit_id=35
+
+[col-fabric:children]
+col-ac-sw
+col-ag-sw
+
+[col-edge:children]
+col-edge-r
+col-edge-fw
+col-edge-fw
+[col:children]
+col-fabric
+col-edge
+
+[mgmt-ac-sw]
+mgmt-ac-sw01 ansible_host=10.10.60.136 unit_id=36
+mgmt-ac-sw02 ansible_host=10.10.60.137 unit_id=37
+mgmt-ac-sw03 ansible_host=10.10.60.138 unit_id=38
+mgmt-ac-sw04 ansible_host=10.10.60.139 unit_id=39
+mgmt-ac-sw05 ansible_host=10.10.60.140 unit_id=40
+mgmt-ac-sw06 ansible_host=10.10.60.141 unit_id=41
+mgmt-ac-sw07 ansible_host=10.10.60.142 unit_id=42
+mgmt-ac-sw08 ansible_host=10.10.60.143 unit_id=43
+mgmt-ac-sw09 ansible_host=10.10.60.144 unit_id=44
+mgmt-ac-sw10 ansible_host=10.10.60.145 unit_id=45
+mgmt-ac-sw11 ansible_host=10.10.60.146 unit_id=46
+mgmt-ac-sw12 ansible_host=10.10.60.147 unit_id=47
+mgmt-ac-sw13 ansible_host=10.10.60.148 unit_id=48
+mgmt-ac-sw14 ansible_host=10.10.60.149 unit_id=49
+mgmt-ac-sw15 ansible_host=10.10.60.150 unit_id=50
+mgmt-ac-sw16 ansible_host=10.10.60.151 unit_id=51
+mgmt-ac-sw17 ansible_host=10.10.60.152 unit_id=52
+mgmt-ac-sw18 ansible_host=10.10.60.153 unit_id=53
+mgmt-ac-sw19 ansible_host=10.10.60.154 unit_id=54
+mgmt-ac-sw20 ansible_host=10.10.60.155 unit_id=55
+mgmt-ac-sw21 ansible_host=10.10.60.156 unit_id=56
+mgmt-ac-sw22 ansible_host=10.10.60.157 unit_id=57
+[mgmt-ag-sw]
+mgmt-ag-sw01 ansible_host=10.10.60.158 unit_id=58
+
+[mgmt:children]
+mgmt-ac-sw
+mgmt-ag-sw
+
+
+
+[lan-cr-sw]
+lan-cr-sw01 ansible_host=10.10.60.159 unit_id=59
+[lan-edge-r]
+lan-edge-rt01 ansible_host=10.10.60.160 unit_id=60
+lan-edge-rt02 ansible_host=10.10.60.161 unit_id=61
+[lan-edge-fw]
+lan-edge-fw01 ansible_host=10.10.60.162 unit_id=62
+lan-edge-fw02 ansible_host=10.10.60.163 unit_id=63
+[lan-edge-sw]
+lan-edge-sw01 ansible_host=10.10.60.164 unit_id=64
+[lan-ac-sw]
+lan-ac-ttk-fl05 ansible_host=172.16.5.255 unit_id=64
+lan-ac-ktze-fl09 ansible_host=172.16.9.255 unit_id=65
+lan-ac-ktze-fl13 ansible_host=172.16.13.255 unit_id=66
+lan-ac-ktze-fl14 ansible_host=172.16.14.255 unit_id=67
+lan-ac-ttk-fl15 ansible_host=172.16.15.255 unit_id=68
+lan-ac-ttk-fl20 ansible_host=172.16.20.255 unit_id=69
+lan-ac-ttk-fl22 ansible_host=172.16.22.255 unit_id=70
+lan-ac-ttk-fl23 ansible_host=172.16.23.255 unit_id=71
+lan-ac-ktze-fl24 ansible_host=172.16.24.255 unit_id=72
+lan-ac-ttk-fl25 ansible_host=172.16.25.255 unit_id=73
+lan-ac-ktze-fl25 ansible_host=172.16.25.254 unit_id=74
+lan-ac-ktze-fl28 ansible_host=172.16.28.255 unit_id=75
+lan-ac-ttk-fl37 ansible_host=172.16.37.255 unit_id=76
+
+
+[lan-edge:children]
+lan-edge-r
+lan-edge-fw
+lan-edge-sw
+
+[lan:children]
+lan-edge
+lan-cr-sw
+lan-ac-sw

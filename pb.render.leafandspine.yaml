@@ -1,8 +1,6 @@
 - name: Get create config
   hosts:
     - cloud-fabric
-    - mgmt-ag-sw01
-    - mgmt-ac-sw
   connection: local
   gather_facts: no
   vars_files:
